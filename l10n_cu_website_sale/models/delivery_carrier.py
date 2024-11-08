@@ -12,3 +12,9 @@ class DeliveryCarrier(models.Model):
         self.municipality_ids -= self.municipality_ids.filtered(
             lambda state: state._origin.id not in self.state_ids.res_municipality_id.ids
         )
+
+    def _match_address(self, partner):
+        match = super(DeliveryCarrier, self)._match_address(partner)
+        if self.municipality_ids and partner.res_municipality_id not in self.municipality_ids:
+            return False
+        return match
