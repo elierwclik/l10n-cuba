@@ -20,14 +20,11 @@ WebsiteSale.include({
      * @private
      */
     _changeCountry: function () {
-        let municipalities = this.$el.find("select[name='res_municipality_id']");
-        if (municipalities.data('init') === 0 || municipalities.find('option').length === 1) {
-            let data = {
-                municipalities: []
-            }
-            this._expandDataStates(data);
-        }
+        let selectMunicipalities = this.$el.find("select[name='res_municipality_id']");
+        if (selectMunicipalities.data('init') === 0 || selectMunicipalities.find('option').length === 1) {
+            selectMunicipalities.val('').parent('div').hide();
 
+        }
         this._super.apply(this, arguments);
         this._onChangeState(this);
     },
