@@ -3,7 +3,7 @@
 from odoo import models, fields
 
 
-class State(models.Model):
+class ResCountryState(models.Model):
     _inherit = 'res.country.state'
 
-    res_municipality_id = fields.One2many('res.municipality', 'state_id', 'Municipio', help="Municipios de Cuba")
+    municipality_ids = fields.One2many('res.state.municipality', 'state_id', 'Municipios', help="Municipios de Cuba")

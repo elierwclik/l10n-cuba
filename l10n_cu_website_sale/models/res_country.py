@@ -5,9 +5,6 @@ from odoo.exceptions import UserError
 class ResCountry(models.Model):
     _inherit = 'res.country'
 
-    city_required = fields.Boolean(default=True, string='City Required')
-    municipality_required = fields.Boolean(default=False, string='Municipality Required')
-
     @api.constrains('address_format')
     def _check_address_format(self):
         """

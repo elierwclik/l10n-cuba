@@ -1,31 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="res_municipality_view_tree" model="ir.ui.view">
-            <field name="name">res_municipality_view_tree</field>
-            <field name="model">res.municipality</field>
+
+        <record id="view_state_municipality_tree" model="ir.ui.view">
+            <field name="name">res.municipality.list</field>
+            <field name="model">res.state.municipality</field>
             <field name="arch" type="xml">
-                <tree string="Municipalities" name="res_municipality_tree" editable="bottom">
+                <list string="municipality" editable="bottom">
                     <field name="name"/>
                     <field name="code"/>
-                    <field name="state_id" options="{'no_create': True, 'no_open': True}"/>
-                    <field name="country_id" options="{'no_create': True, 'no_open': True}"/>
-                </tree>
-            </field>
-        </record>
-        
-        <record id="action_list_municipalities" model="ir.actions.act_window">
-            <field name="name">Municipalities</field>
-            <field name="res_model">res.municipality</field>
-            <field name="view_mode">tree</field>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Municipalities</p>
+                    <field name="country_id"/>
+                    <field name="state_id" options="{'no_create': True, 'no_open': True}"
+                           domain="[('country_id', '=', country_id)]" readonly="not country_id"
+                           required="True"/>
+                </list>
             </field>
         </record>
 
-        <menuitem id="menu_res_municipality" action="l10n_cu_address.action_list_municipalities" name="Municipalities"
-                  parent="contacts.menu_localisation" sequence="2"/>
-        
+        <record id="view_state_municipality_form" model="ir.ui.view">
+            <field name="name">res.municipality.form</field>
+            <field name="model">res.state.municipality</field>
+            <field name="arch" type="xml">
+                <form string="municipality">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country_id"/>
+                            <field name="state_id" options="{'no_create': True, 'no_open': True}"
+                                   domain="[('country_id', '=', country_id)]" readonly="not country_id"
+                                   required="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_state_municipality_search" model="ir.ui.view">
+            <field name="name">res.municipality.search</field>
+            <field name="model">res.state.municipality</field>
+            <field name="arch" type="xml">
+                <search string="State">
+                    <field name="name"/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                    <group string="Group By">
+                        <filter name="groupby_country" string="País" context="{'group_by': 'country_id'}"/>
+                        <filter name="groupby_state" string="Estado" context="{'group_by': 'state_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_state_municipality" model="ir.actions.act_window">
+            <field name="name">Municipalities</field>
+            <field name="res_model">res.state.municipality</field>
+            <field name="view_id" ref="view_state_municipality_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crear un municipio
+                </p>
+                <p>
+                    Los municipios pertenecen a los estados/provincias y forman parte de las direcciones de tus
+                    contactos.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_state_municipality_partner"
+                  action="action_state_municipality"
+                  parent="contacts.menu_localisation"
+                  sequence="2"/>
+
     </data>
 </odoo>
 

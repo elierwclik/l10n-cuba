@@ -6,10 +6,10 @@ from odoo import models
 class ResCountryState(models.Model):
     _inherit = 'res.country.state'
 
-    def get_website_sale_municipalities(self, mode='billing'):
-        res = self.sudo().res_municipality_id
-        if mode == 'shipping':
-            municipalities = self.env['res.municipality']
+    def get_website_sale_municipalities(self, address_type='billing'):
+        res = self.sudo().municipality_ids
+        if address_type == 'delivery':
+            municipalities = self.env['res.state.municipality']
             dom = ['|', ('state_ids', 'in', self.id), ('state_ids', '=', False), ('website_published', '=', True)]
             delivery_carriers = self.env['delivery.carrier'].sudo().search(dom)
 

@@ -16,5 +16,5 @@ class ResPartner(models.Model):
         """
 
         address_format, args = super(ResPartner, self)._prepare_display_address(without_company=without_company)
-        args['municipality_name'] = self.res_municipality_id.name or ''
+        args['municipality_name'] = self.municipality_id.name or ''
         return address_format, args

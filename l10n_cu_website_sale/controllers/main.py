@@ -7,79 +7,56 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class L10nCuWebsiteSale(WebsiteSale):
 
-    def _get_country_related_render_values(self, kw, render_values):
-        """ Provide the fields related to the country to render the website sale form """
+    def _prepare_address_form_values(self, order_sudo, partner_sudo, address_type, **kwargs):
+        rendering_values = super()._prepare_address_form_values(
+            order_sudo, partner_sudo, address_type=address_type, **kwargs
+        )
 
-        res = super(L10nCuWebsiteSale, self)._get_country_related_render_values(kw, render_values)
-        mode = render_values['mode']
-        Partner = request.env['res.partner']
-        partner_id = render_values['partner_id']
+        state = request.env['res.country.state'].browse(rendering_values['state_id'])
+        ResMunicipality = request.env['res.state.municipality'].sudo()
 
-        if mode and partner_id != -1:
-            Partner = Partner.browse(int(render_values['partner_id']))
+        rendering_values.update({
+            'state': state,
+            'municipality': partner_sudo.municipality_id.id,
+            'state_municipalities': ResMunicipality.search([('state_id', '=', state.id)]) if state else ResMunicipality,
+        })
+        return rendering_values
 
-        res['state_id'] = Partner.state_id
-        res['municipalities'] = Partner.state_id.get_website_sale_municipalities(mode=mode[1])
+    def _get_mandatory_billing_address_fields(self, country_sudo):
+        """ Return the set of mandatory billing field names.
 
-        return res
+        :param res.country country_sudo: The country to use to build the set of mandatory fields.
+        :return: The set of mandatory billing field names.
+        :rtype: set
+        """
+        mandatory_fields = super()._get_mandatory_billing_address_fields(country_sudo)
 
-    def _get_mandatory_fields_billing(self, country_id=False):
-        req = super(L10nCuWebsiteSale, self)._get_mandatory_fields_billing(country_id=country_id)
-        if country_id:
-            country = request.env['res.country'].browse(country_id)
-            if country.municipality_required:
-                req += ['res_municipality_id']
-            if not country.city_required:
-                req.remove('city')
+        if country_sudo.code == 'CU':
+            mandatory_fields.add('municipality_id')
 
-        return req
+        return mandatory_fields
 
-    def checkout_form_validate(self, mode, all_form_values, data):
-        error, error_message = super(L10nCuWebsiteSale, self).checkout_form_validate(mode, all_form_values, data)
+    def _get_mandatory_delivery_address_fields(self, country_sudo):
+        """ Return the set of mandatory delivery field names.
 
-        # municipality validation
-        try:
-            country_id = data.get("country_id")
-            country = request.env['res.country'].browse(int(country_id))
+        :param res.country country_sudo: The country to use to build the set of mandatory fields.
+        :return: The set of mandatory delivery field names.
+        :rtype: set
+        """
+        mandatory_fields = super()._get_mandatory_delivery_address_fields(country_sudo)
 
-            state_id = data.get("state_id")
-            state = request.env['res.country.state'].browse(int(state_id))
+        if country_sudo.code == 'CU':
+            mandatory_fields.add('municipality_id')
+            mandatory_fields.remove('city')
+        return mandatory_fields
 
-            res_municipality_id = data.get("res_municipality_id")
+    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="jsonrpc", auth="public",
+                methods=["POST"], website=True)
+    def l10n_cu_state_infos(self, state, address_type, **kw):
 
-            if state:
-                if res_municipality_id and int(res_municipality_id) not in state.res_municipality_id.ids:
-                    error["municipality_id"] = 'error'
-                    error_message.append(_('Invalid Municipality. Please select a valid Municipality.'))
-
-                if not res_municipality_id and country.municipality_required:
-                    error["municipality_id"] = 'error'
-                    error_message.append(_('Some required fields are empty.'))
-
-        except ValueError as e:
-            error['common'] = 'Unknown error'
-            error_message.append(e.args[0])
-
-        return error, error_message
-
-    def _get_mandatory_fields_shipping(self, country_id=False):
-        req = super(L10nCuWebsiteSale, self)._get_mandatory_fields_shipping(country_id=country_id)
-        if country_id:
-            country = request.env['res.country'].browse(country_id)
-            if country.municipality_required:
-                req += ['res_municipality_id']
-            if not country.city_required:
-                req.remove('city')
-
-        return req
-
-    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="json", auth="public", methods=["POST"], website=True, )
-    def l10n_cu_state_infos(self, state, mode, **kw):
-
-        municipalities = state.get_website_sale_municipalities(mode=mode)
-        municipality_required = state.country_id.municipality_required
+        municipalities = state.get_website_sale_municipalities(address_type=address_type)
 
         return {
             'municipalities': [(c.id, c.name, c.code) for c in municipalities],
-            'municipality_required': municipality_required
+            'municipality_required': state.country_id.code == 'CU'
         }
