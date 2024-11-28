@@ -6,7 +6,7 @@
             <div class="w-100"/>
             <div id="div_municipality" class="col-lg-6 mb-2"
                  t-att-style="not state_municipalities and 'display: none'">
-                <label class="col-form-label" for="o_municipality_id">municipality / Province</label>
+                <label class="col-form-label" for="o_municipality_id">Municipality</label>
                 <select id="o_municipality_id" name="municipality_id" class="form-select">
                     <option value="">Municipality...</option>
                     <t t-foreach="state_municipalities" t-as="m">
