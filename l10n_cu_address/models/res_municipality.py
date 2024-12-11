@@ -13,10 +13,7 @@ class Municipality(models.Model):
     country_id = fields.Many2one('res.country', string='Country')
     state_id = fields.Many2one('res.country.state', 'State')
 
-    _sql_constraints = [
-        ('unique_state_id_code', 'UNIQUE(state_id, code)',
-         '¡El código del municipio debe ser único por Estado/Provincia!')
-    ]
+    # _sql_constraints = [('unique_state_id_code', 'UNIQUE(state_id, code)', '¡El código del municipio debe ser único por Estado/Provincia!')]
 
     @api.onchange('country_id')
     def _onchange_country_id(self):
