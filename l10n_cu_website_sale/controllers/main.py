@@ -50,10 +50,12 @@ class L10nCuWebsiteSale(WebsiteSale):
             mandatory_fields.remove('city')
         return mandatory_fields
 
-    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="jsonrpc", auth="public",
+    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="json", auth="public",
                 methods=["POST"], website=True)
     def l10n_cu_state_infos(self, state, address_type, **kw):
-
+        """
+        @note: In Odoo 18.1 has been changed 'type="json"' to 'type="jsonrpc"'
+        """
         municipalities = state.get_website_sale_municipalities(address_type=address_type)
 
         return {
