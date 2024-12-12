@@ -15,6 +15,6 @@ class DeliveryCarrier(models.Model):
 
     def _match_address(self, partner):
         match = super(DeliveryCarrier, self)._match_address(partner)
-        if self.municipality_ids and partner.res_municipality_id not in self.municipality_ids:
+        if self.municipality_ids and partner.municipality_id not in self.municipality_ids:
             return False
         return match
