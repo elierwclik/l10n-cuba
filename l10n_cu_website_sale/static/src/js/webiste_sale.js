@@ -37,12 +37,13 @@ WebsiteSale.include({
             const mode = country.attr('mode');
             const state = this.$el.find("select[name='state_id']");
 
-            if (!$("#state_id").val()) {
-                let data = {
-                    municipalities: []
-                }
+            if (!state.val()) {
+                const data = {
+                        municipalities: []
+                };
                 return this._expandDataStates(data);
             }
+
 
             return this.rpc("/shop/l10n_cu/state_infos/" + parseInt(state.val()), {
                 mode: mode
