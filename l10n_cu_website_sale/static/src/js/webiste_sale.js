@@ -23,7 +23,7 @@ WebsiteSale.include({
         let selectMunicipalities = this.$el.find("select[name='res_municipality_id']");
         if (selectMunicipalities.data('init') === 0 || selectMunicipalities.find('option').length === 1) {
             if (!$("#country_id").val()) {
-                return;
+                return this._super.apply(this, arguments);
             }
             selectMunicipalities.val('').parent('div').hide();
 
@@ -37,13 +37,12 @@ WebsiteSale.include({
             const mode = country.attr('mode');
             const state = this.$el.find("select[name='state_id']");
 
-            if (!state.val()) {
-                const data = {
-                        municipalities: []
-                };
+            if (state.val() === '' || state.val() === null) {
+                let data = {
+                    municipalities: []
+                }
                 return this._expandDataStates(data);
             }
-
 
             return this.rpc("/shop/l10n_cu/state_infos/" + parseInt(state.val()), {
                 mode: mode
