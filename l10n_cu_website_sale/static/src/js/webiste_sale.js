@@ -22,11 +22,13 @@ WebsiteSale.include({
     _changeCountry: function () {
         let selectMunicipalities = this.$el.find("select[name='res_municipality_id']");
         if (selectMunicipalities.data('init') === 0 || selectMunicipalities.find('option').length === 1) {
+            if (!$("#country_id").val()) {
+                return;
+            }
             selectMunicipalities.val('').parent('div').hide();
 
         }
         this._super.apply(this, arguments);
-        this._onChangeState(this);
     },
 
     _onChangeState: function (ev) {
@@ -35,7 +37,7 @@ WebsiteSale.include({
             const mode = country.attr('mode');
             const state = this.$el.find("select[name='state_id']");
 
-            if (state.val() === '' || state.val() === null) {
+            if (!$("#state_id").val()) {
                 let data = {
                     municipalities: []
                 }
