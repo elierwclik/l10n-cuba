@@ -1,6 +1,6 @@
 
 # l10n-cuba
-## Localización cubana para odoo V17 
+## Localización cubana para odoo V18 
 
 ### Esta Rama  aun está en fase de desarrollos y pruebas. no es liberada aun.
 
@@ -49,13 +49,10 @@ Este repositorio esta bajo la licencia [GPL-3.0](LICENSE).
 CCO,  o [Comunidad Cubana de Odoo ](https://cco-web.odoo.com), tiene como misión el soporte y desarrollo colaborativo de funcionalidades para Odoo con el fin de promover y diversificar su uso.
 
 ----
-## En pruebas plan contable gubernamental
-
-Hemos agregado el plan contable gubernamental en fase de pruebas.
-no es un plan contable estable.
 
 ----
 ## Próximos cambios.
 
 Desarrollo de módulos como Activos Fijos. y otros necesarios para el mejor control de las entidades y pymes del pais. Tambien se desarrolla los modulos de Tesorería y control del gasto del presupuesto segun las normas del MFP .para las UPs. 
+Costo de las ventas ( reportes ) en los Modulos de punto de ventas.
 
