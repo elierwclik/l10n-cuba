@@ -10,7 +10,7 @@ class L10nCuWebsiteSale(WebsiteSale):
     def _get_country_related_render_values(self, kw, render_values):
         """ Provide the fields related to the country to render the website sale form """
 
-        res = super(L10nCuWebsiteSale, self)._get_country_related_render_values(kw, render_values)
+        res = super()._get_country_related_render_values(kw, render_values)
         mode = render_values['mode']
         Partner = request.env['res.partner']
         partner_id = render_values['partner_id']
@@ -24,7 +24,7 @@ class L10nCuWebsiteSale(WebsiteSale):
         return res
 
     def _get_mandatory_fields_billing(self, country_id=False):
-        req = super(L10nCuWebsiteSale, self)._get_mandatory_fields_billing(country_id=country_id)
+        req = super()._get_mandatory_fields_billing(country_id=country_id)
         if country_id:
             country = request.env['res.country'].browse(country_id)
             if country.municipality_required:
@@ -35,35 +35,36 @@ class L10nCuWebsiteSale(WebsiteSale):
         return req
 
     def checkout_form_validate(self, mode, all_form_values, data):
-        error, error_message = super(L10nCuWebsiteSale, self).checkout_form_validate(mode, all_form_values, data)
+        error, error_message = super().checkout_form_validate(mode, all_form_values, data)
 
-        # municipality validation
-        try:
-            country_id = data.get("country_id")
-            country = request.env['res.country'].browse(int(country_id))
+        country_id = data.get("country_id")
+        state_id = data.get("state_id")
+        res_municipality_id = data.get("res_municipality_id")
 
-            state_id = data.get("state_id")
-            state = request.env['res.country.state'].browse(int(state_id))
+        if not isinstance(country_id, int) or (state_id and not isinstance(state_id, int)):
+            error['common'] = 'Invalid country or state ID.'
+            error_message.append(_('Invalid country or state ID.'))
+            return error, error_message
 
-            res_municipality_id = data.get("res_municipality_id")
+        country = request.env['res.country'].browse(country_id)
+        state = request.env['res.country.state'].browse(state_id) if state_id else None
 
-            if state:
-                if res_municipality_id and int(res_municipality_id) not in state.res_municipality_id.ids:
-                    error["municipality_id"] = 'error'
-                    error_message.append(_('Invalid Municipality. Please select a valid Municipality.'))
+        if res_municipality_id and not isinstance(res_municipality_id, int):
+            error["res_municipality_id"] = 'error'
+            error_message.append(_('Municipality ID must be a valid integer.'))
 
-                if not res_municipality_id and country.municipality_required:
-                    error["municipality_id"] = 'error'
-                    error_message.append(_('Some required fields are empty.'))
+        elif state and res_municipality_id and int(res_municipality_id) not in state.res_municipality_id.ids:
+            error["res_municipality_id"] = 'error'
+            error_message.append(_('Invalid Municipality. Please select a valid Municipality.'))
 
-        except ValueError as e:
-            error['common'] = 'Unknown error'
-            error_message.append(e.args[0])
+        if not res_municipality_id and country.municipality_required:
+            error["res_municipality_id"] = 'error'
+            error_message.append(_('Some required fields are empty.'))
 
         return error, error_message
 
     def _get_mandatory_fields_shipping(self, country_id=False):
-        req = super(L10nCuWebsiteSale, self)._get_mandatory_fields_shipping(country_id=country_id)
+        req = super()._get_mandatory_fields_shipping(country_id=country_id)
         if country_id:
             country = request.env['res.country'].browse(country_id)
             if country.municipality_required:
