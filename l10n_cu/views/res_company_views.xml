@@ -7,10 +7,10 @@
         <field name="arch" type="xml">
             <field name="industry_id" position="after">
                 <field name="l10n_cu_cnae_ids" attrs="{'invisible': [('is_company', '=', False)]}">
-                    <tree editable="bottom">
+                    <list editable="bottom">
                         <field name="sequence" widget="handle"/>
                         <field name="cnae_id" options="{'no_create': True}"/>
-                    </tree>
+                    </list>
                 </field>
                 <field name="industry_id" position="move"/>
             </field>
