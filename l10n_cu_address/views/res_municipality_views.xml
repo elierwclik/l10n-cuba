@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="res_municipality_view_tree" model="ir.ui.view">
-            <field name="name">res_municipality_view_tree</field>
+        <record id="res_municipality_view_list" model="ir.ui.view">
+            <field name="name">res_municipality_view_list</field>
             <field name="model">res.municipality</field>
             <field name="arch" type="xml">
-                <list string="Municipalities" name="res_municipality_tree" editable="bottom">
+                <list string="Municipalities" name="res_municipality_list" editable="bottom">
                     <field name="name"/>
                     <field name="code"/>
                     <field name="state_id" options="{'no_create': True, 'no_open': True}"/>
@@ -19,12 +19,34 @@
             <field name="res_model">res.municipality</field>
             <field name="view_mode">list</field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Municipalities</p>
+                <p class="o_view_nocontent_smiling_face">
+                    Crear un municipio
+                </p>
+                <p>
+                    Los municipios pertenecen a los estados/provincias y forman parte de las direcciones de tus
+                    contactos.
+                </p>
             </field>
         </record>
 
         <menuitem id="menu_res_municipality" action="l10n_cu_address.action_list_municipalities" name="Municipalities"
                   parent="contacts.menu_localisation" sequence="2"/>
+        
+        <record id="view_state_municipality_search" model="ir.ui.view">
+            <field name="name">res.municipality.search</field>
+            <field name="model">res.municipality</field>
+            <field name="arch" type="xml">
+                <search string="State">
+                    <field name="name"/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                    <group string="Group By">
+                        <filter name="groupby_country" string="País" context="{'group_by': 'country_id'}"/>
+                        <filter name="groupby_state" string="Estado" context="{'group_by': 'state_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
         
     </data>
 </odoo>
