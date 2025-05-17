@@ -4,7 +4,7 @@
 {
     'name': 'Cuba - Nóminas con contabilidad',
     'category': 'Accounting/Accounting',
-    'version': '17.0',
+    'version': '18.0',
     'description': """
 Accounting Data for Cuba Payroll Rules.
 ==========================================

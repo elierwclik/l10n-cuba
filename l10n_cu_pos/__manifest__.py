@@ -4,7 +4,7 @@
     "name": "Cuba - POS",
     "summary": "Implementacion de Punto de Ventas para Cuba.",
     "category": "Point Of Sale",
-    "version": "17.0",
+    "version": "18.0",
     "author": "Comunidad Cubana de Odoo",
     "depends": ['point_of_sale', 'l10n_cu'],
     'license': 'LGPL-3',
