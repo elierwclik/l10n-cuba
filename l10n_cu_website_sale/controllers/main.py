@@ -7,80 +7,57 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class L10nCuWebsiteSale(WebsiteSale):
 
-    def _get_country_related_render_values(self, kw, render_values):
-        """ Provide the fields related to the country to render the website sale form """
+    def _prepare_address_form_values(self, order_sudo, partner_sudo, address_type, **kwargs):
+        rendering_values = super()._prepare_address_form_values(
+            order_sudo, partner_sudo, address_type=address_type, **kwargs
+        )
 
-        res = super()._get_country_related_render_values(kw, render_values)
-        mode = render_values['mode']
-        Partner = request.env['res.partner']
-        partner_id = render_values['partner_id']
+        state = request.env['res.country.state'].browse(rendering_values['state_id'])
+        ResMunicipality = request.env['res.municipality'].sudo()
 
-        if mode and partner_id != -1:
-            Partner = Partner.browse(int(render_values['partner_id']))
+        rendering_values.update({
+            'state': state,
+            'res_municipality_id': partner_sudo.res_municipality_id.id,
+            'state_municipalities': ResMunicipality.search([('state_id', '=', state.id)]) if state else ResMunicipality,
+        })
+        return rendering_values
 
-        res['state_id'] = Partner.state_id
-        res['municipalities'] = Partner.state_id.get_website_sale_municipalities(mode=mode[1])
+    def _get_mandatory_billing_address_fields(self, country_sudo):
+        """ Return the set of mandatory billing field names.
 
-        return res
+        :param res.country country_sudo: The country to use to build the set of mandatory fields.
+        :return: The set of mandatory billing field names.
+        :rtype: set
+        """
+        mandatory_fields = super()._get_mandatory_billing_address_fields(country_sudo)
 
-    def _get_mandatory_fields_billing(self, country_id=False):
-        req = super()._get_mandatory_fields_billing(country_id=country_id)
-        if country_id:
-            country = request.env['res.country'].browse(country_id)
-            if country.municipality_required:
-                req += ['res_municipality_id']
-            if not country.city_required:
-                req.remove('city')
+        if country_sudo.code == 'CU':
+            mandatory_fields.add('res_municipality_id')
 
-        return req
+        return mandatory_fields
 
-    def checkout_form_validate(self, mode, all_form_values, data):
-        error, error_message = super().checkout_form_validate(mode, all_form_values, data)
+    def _get_mandatory_delivery_address_fields(self, country_sudo):
+        """ Return the set of mandatory delivery field names.
 
-        country_id = data.get("country_id")
-        state_id = data.get("state_id")
-        res_municipality_id = data.get("res_municipality_id")
+        :param res.country country_sudo: The country to use to build the set of mandatory fields.
+        :return: The set of mandatory delivery field names.
+        :rtype: set
+        """
+        mandatory_fields = super()._get_mandatory_delivery_address_fields(country_sudo)
 
-        if not isinstance(country_id, int) or (state_id and not isinstance(state_id, int)):
-            error['common'] = 'Invalid country or state ID.'
-            error_message.append(_('Invalid country or state ID.'))
-            return error, error_message
+        if country_sudo.code == 'CU':
+            mandatory_fields.add('res_municipality_id')
+            mandatory_fields.remove('city')
+        return mandatory_fields
 
-        country = request.env['res.country'].browse(country_id)
-        state = request.env['res.country.state'].browse(state_id) if state_id else None
-
-        if res_municipality_id and not isinstance(res_municipality_id, int):
-            error["res_municipality_id"] = 'error'
-            error_message.append(_('Municipality ID must be a valid integer.'))
-
-        elif state and res_municipality_id and int(res_municipality_id) not in state.res_municipality_id.ids:
-            error["res_municipality_id"] = 'error'
-            error_message.append(_('Invalid Municipality. Please select a valid Municipality.'))
-
-        if not res_municipality_id and country.municipality_required:
-            error["res_municipality_id"] = 'error'
-            error_message.append(_('Some required fields are empty.'))
-
-        return error, error_message
-
-    def _get_mandatory_fields_shipping(self, country_id=False):
-        req = super()._get_mandatory_fields_shipping(country_id=country_id)
-        if country_id:
-            country = request.env['res.country'].browse(country_id)
-            if country.municipality_required:
-                req += ['res_municipality_id']
-            if not country.city_required:
-                req.remove('city')
-
-        return req
-
-    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="json", auth="public", methods=["POST"], website=True, )
-    def l10n_cu_state_infos(self, state, mode, **kw):
-
-        municipalities = state.get_website_sale_municipalities(mode=mode)
-        municipality_required = state.country_id.municipality_required
+    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="json", auth="public",
+                methods=["POST"], website=True)
+    def l10n_cu_state_infos(self, state, address_type, **kw):
+        """
+        @note: In Odoo 18.1 has been changed 'type="json"' to 'type="jsonrpc"'
+        """
 
         return {
-            'municipalities': [(c.id, c.name, c.code) for c in municipalities],
-            'municipality_required': municipality_required
+            'municipalities': [(c.id, c.name, c.code) for c in state.sudo().res_municipality_ids],
+            'municipality_required': state.country_id.code == 'CU'
         }
