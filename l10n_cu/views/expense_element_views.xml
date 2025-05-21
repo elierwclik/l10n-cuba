@@ -38,19 +38,19 @@
             <field name="name">expense.element.list</field>
             <field name="model">expense.element</field>
             <field name="arch" type="xml">
-                <tree create="1" delete="1" multi_edit="0" string="Element list">
+                <list create="1" delete="1" multi_edit="0" string="Element list">
                     <field name="company_id" invisible="1"/>
                     <field name="code"/>
                     <field name="name"/>  
                     <field name="parent_id"/>                  
-                </tree>
+                </list>
             </field>
         </record>  
 
         <record id="action_account_expense_element_form" model="ir.actions.act_window">
             <field name="name">Expense Elements</field>
             <field name="res_model">expense.element</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="view_id" ref="view_exense_element_list"/>                        
         </record>
 

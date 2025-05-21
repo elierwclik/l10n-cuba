@@ -7,12 +7,12 @@
             <xpath expr="//page[@name='hr_settings']" position="after">
                 <page name="hr_other_input" string="Otras entradas" groups="hr.group_hr_user">
                     <field name="other_input_id">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="rule_input_id"/>
                             <field name="amount" sum="Total"/>
                             <field name="start_date"/>
                             <field name="end_date"/>
-                        </tree>
+                        </list>
                     </field>
                 </page>
             </xpath>

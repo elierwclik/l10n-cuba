@@ -65,7 +65,7 @@
           <field name="model">account.account</field>
           <field name="inherit_id" ref="account.view_account_list"/>
           <field name="arch" type="xml">
-              <xpath expr="//tree" position="attributes">
+              <xpath expr="//list" position="attributes">
                   <attribute name="default_order">code</attribute>
               </xpath>
               <xpath expr="field[@name='account_type']" position="after">
@@ -76,7 +76,7 @@
           </field>
       </record>
       <record id="init_accounts_tree" model="ir.ui.view">
-          <field name="name">app.account.setup.opening.move.line.tree</field>
+          <field name="name">app.account.setup.opening.move.line.list</field>
           <field name="model">account.account</field>
           <field name="inherit_id" ref="account.init_accounts_tree"/>
           <field name="arch" type="xml">

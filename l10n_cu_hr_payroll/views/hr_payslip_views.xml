@@ -1,12 +1,12 @@
 <odoo>
     <record id="hr_payroll_view_hr_payslip_tree_inherit" model="ir.ui.view">
-        <field name="name">hr.payslip.tree.inherit</field>
+        <field name="name">hr.payslip.list.inherit</field>
         <field name="model">hr.payslip</field>
         <field name="inherit_id" ref="om_hr_payroll.view_hr_payslip_tree"/>
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <list position="attributes">
                 <attribute name="decoration-danger">total_on_payable == True</attribute>
-            </tree>
+            </list>
             <xpath expr="//field[@name='date_to']" position="after">
                 <field name="total"/>
                 <field name="total_on_payable" invisible="1"/>
@@ -69,10 +69,10 @@
         </field>
     </record>
     <record id="hr_payslip_line_view_tree" model="ir.ui.view">
-        <field name="name">hr.payslip.line.view.tree</field>
+        <field name="name">hr.payslip.line.view.list</field>
         <field name="model">hr.payslip.line</field>
         <field name="arch" type="xml">
-            <tree string="Payslip Lines">
+            <list string="Payslip Lines">
                 <field name="employee_id"/>
                 <field name="code"/>
                 <field name="name"/>
@@ -80,7 +80,7 @@
                 <field name="amount"/>
                 <field name="category_id"/>
                 <field name="slip_id"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="hr_payslip_line_view_pivot" model="ir.ui.view">
@@ -97,7 +97,7 @@
     <record id="hr_payslip_line_action" model="ir.actions.act_window">
         <field name="name">Payslips Line</field>
         <field name="res_model">hr.payslip.line</field>
-        <field name="view_mode">tree,pivot</field>
+        <field name="view_mode">list,pivot</field>
         <field name="view_id" ref="hr_payslip_line_view_tree"/>
     </record>
 

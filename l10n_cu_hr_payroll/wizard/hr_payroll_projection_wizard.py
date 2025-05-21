@@ -44,11 +44,11 @@ class HrPayslipProjectionWizard(models.TransientModel):
         # form_view_id = self.env.ref('l10n_cu_hr_payroll.hr_payslip_projection_view_form').id
         # action = {
         #     'type': 'ir.actions.act_window',
-        #     'view_mode': 'tree,form',
+        #     'view_mode': 'list,form',
         #     'name': 'Proyecciones',
         #     'res_model': 'hr.payslip.projection',
         #     'target': 'current',
-        #     'views': [[tree_view_id, "tree"], [form_view_id, "form"]],
+        #     'views': [[tree_view_id, "list"], [form_view_id, "form"]],
         # }
         # return action
 
