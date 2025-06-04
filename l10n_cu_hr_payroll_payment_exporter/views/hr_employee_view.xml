@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- primary|extension Inherited .:Form:. view for "model" -->
+    <record id="hr_employee_inherit_form_view" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.form.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='coach_id']" position="after">
+                <field name="no_expediente" style="width:25%%"/>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Pagos">
+                    <group>
+                        <field name="feriado" style="width:25%%"/>
+                    </group>
+                </page>
+                <page string="Vacaciones">
+                    <group>
+                        <field name="vaca_dias_acum"/>
+                        <field name="vaca_imp_acum"/>
+                        <field name="vaca_liquidate"/>
+                    </group>
+                </page>
+            </xpath>
+             <xpath expr="//field[@name='bank_account_id']" position="after">
+                <field name="no_sucursal"/>
+            </xpath>
+
+        </field>
+
+    </record>
+
+</odoo>

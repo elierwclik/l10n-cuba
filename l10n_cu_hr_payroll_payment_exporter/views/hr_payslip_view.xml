@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- primary|extension Inherited .:Form:. view for "model" -->
+    <record id="hr_payslip_run_inherit_form_view" model="ir.ui.view">
+        <field name="name">hr.payslip.run.form.inherit.form.view</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="om_hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='done_payslip_run']" position="after">
+
+                <button name="dbf_file" type="object" string="Generar DBF Banco" class="oe_highlight"
+                        attrs="{'invisible': ['|',('state','in',['close', 'draft']),('est_payslip','in',['VIA', 'LIQ' , 'EST'])]}"
+                />
+
+                <field name="file" filename="file_name"
+                        attrs="{'invisible': ['|',('state','in',['close', 'draft']),('est_payslip','in',['VIA', 'LIQ' , 'EST'])]}"
+                />
+
+                <field name="file_name" invisible="1"
+                       attrs="{'invisible': ['|',('state','in',['close', 'draft']),('est_payslip','in',['VIA', 'LIQ' , 'EST'])]}"
+                />
+
+
+            </xpath>
+
+            <xpath expr="//label[hasclass('oe_edit_only')]" position="before">
+                <h1>
+                    <field name="no_payslip"/>
+                    <field name="est_payslip" invisible="True"/>
+                </h1>
+            </xpath>
+        </field>
+    </record>
+    <!-- primary|extension Inherited .:Tree:. view for "model" -->
+    <record id="hr_payslip_run_inherit_tree_view" model="ir.ui.view">
+        <field name="name">hr.payslip.run.tree.inherit.form.view</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="om_hr_payroll.hr_payslip_run_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="no_payslip"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- primary|extension Inherited .:Kanban:. view for "model" -->
+    <record id="hr_payslip_run_inherit_kanban_view" model="ir.ui.view">
+        <field name="name">hr.payslip.run.kanban.inherit.form.view</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="om_hr_payroll.hr_payslip_run_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('col-6')]/strong" position="before">
+                <t t-if="record.no_payslip.raw_value">
+                    <div class="col-6">
+                        <span class="float-left badge badge-secondary">
+                            <field name="no_payslip"/>
+                        </span>
+                    </div>
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
