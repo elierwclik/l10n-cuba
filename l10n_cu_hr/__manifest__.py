@@ -3,7 +3,7 @@
 
 {
      'name': 'Cuba - RRHH',
-     'version': '17.0',
+     'version': '16.0',
      'category': 'Human Resources',
      'summary': """
         Empleados, tarjetas de asistencias.
