@@ -9,7 +9,7 @@
                 <label class="col-form-label" for="res_municipality_id">Municipality</label>
                 <select name="res_municipality_id" t-attf-class="form-select #{error.get('res_municipality_id') and 'is-invalid' or ''}"
                         data-init="1">
-                    <option value="">State / Province...</option>
+                    <option value="">Municipality...</option>
                     <t t-foreach="municipalities" t-as="m">
                         <option t-att-value="m.id"
                                 t-att-selected="m.id == ('res_municipality_id' in checkout and state and checkout['res_municipality_id'] != '' and int(checkout['res_municipality_id']))">
