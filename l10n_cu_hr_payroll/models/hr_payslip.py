@@ -65,8 +65,10 @@ class HrPayslip(models.Model):
                 other_inputs = self.env["hr.payroll.other.input"].search(domain, limit=1)
                 if other_inputs:
                     if other_inputs.start_date:
-                        domain.append(('start_date', '<=', date_from))
+                        domain.append(('start_date', '>=', date_from))
+                        domain.append(('start_date', '<=', date_to))
                     if other_inputs.end_date:
+                        domain.append(('end_date', '>=', date_from))
                         domain.append(('end_date', '<=', date_to))
 
                     other_inputs = self.env["hr.payroll.other.input"].search(domain, limit=1)
