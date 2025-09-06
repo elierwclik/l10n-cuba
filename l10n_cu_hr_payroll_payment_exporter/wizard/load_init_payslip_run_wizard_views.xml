@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="load_init_payslip_run_wizard_view_form" model="ir.ui.view">
+            <field name="name">load.init.payslip.run.wizard.view.form</field>
+            <field name="model">load.init.payslip.run.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group id="info">
+                            <field name="file"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="file_excel" string="Carga Inicial" type="object" class="oe_highlight"
+                                data-hotkey="q"/>
+                        <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="load_init_payslip_run_wizard_action" model="ir.actions.act_window">
+            <field name="name">Carga Inicial de Vacaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">load.init.payslip.run.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="load_init_payslip_run_wizard_view_form"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+    <menuitem
+            id="load_init_payslip_run_menu"
+            name="Carga Inicial de Vacaciones"
+            parent="om_hr_payroll.menu_hr_payroll_configuration"
+            groups="om_hr_payroll.group_hr_payroll_manager"
+            sequence="1"
+            action="load_init_payslip_run_wizard_action"/>
+</odoo>

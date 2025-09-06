@@ -10,6 +10,7 @@
      'data': [
           "security/ir.model.access.csv",
           "views/hr_payslip_view.xml",
-          "views/hr_employee_view.xml"
+          "views/hr_employee_view.xml",
+          'wizard/load_init_payslip_run_wizard_views.xml',
      ],
 }

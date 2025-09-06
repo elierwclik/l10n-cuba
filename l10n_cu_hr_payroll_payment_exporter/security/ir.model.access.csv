@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_vacaciones,hr_vacaciones default,model_hr_vacaciones,,1,1,1,1
+access_load_init_payslip_run_wizard_manager,load_init_payslip_run_wizard_manager,model_load_init_payslip_run_wizard,,1,1,1,1
