@@ -24,7 +24,7 @@ class Employee(models.Model):
    
     # Obtener los dias para la incidencia de Vacaciones Disfrutadas
     def get_vacaciones_a_disfrutar(self, payslip_id):
-        dias = 0
+        hours = 0
         incidencia = self.env['hr.leave'].search([('employee_id.id', '=', self.id),
                                                              ('holiday_status_id.code', '=', 'VacDesc'),
                                                              ('state', '=', 'validate')])
@@ -45,7 +45,7 @@ class Employee(models.Model):
 
     # Obtener los dias para la incidencia de Vacaciones Simultaneas
     def get_vacaciones_simultaneas(self, payslip_id):
-        dias = 0
+        hours = 0
         incidencia = self.env['hr.leave'].search([('employee_id.id', '=', self.id),
                                                              ('holiday_status_id.code', '=', 'vac_simultaneas'),
                                                              ('state', '=', 'validate')])
