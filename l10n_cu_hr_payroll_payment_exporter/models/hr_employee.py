@@ -27,14 +27,14 @@ class Employee(models.Model):
         dias = 0
         incidencia = self.env['hr.leave'].search([('employee_id.id', '=', self.id),
                                                              ('holiday_status_id.code', '=', 'VacDesc'),
-                                                             ('state', '!=', 'validate')])
+                                                             ('state', '=', 'validate')])
         nomina = self.env['hr.payslip'].search([('id', '=', payslip_id)])
         for sec in incidencia:
             fechai = sec.date_from.strftime("%m-%Y")
             fecha_nomina = nomina.date_from.strftime("%m-%Y")
             if fechai == fecha_nomina:
-                dias += sec.number_of_days
-        return dias
+                hours += sec.number_of_hours_display
+        return hours
 
     # Obtener el importe de Vacaciones a Disfrutar
     def get_imp_vacaciones_a_disfrutar(self):
@@ -48,14 +48,14 @@ class Employee(models.Model):
         dias = 0
         incidencia = self.env['hr.leave'].search([('employee_id.id', '=', self.id),
                                                              ('holiday_status_id.code', '=', 'vac_simultaneas'),
-                                                             ('state', '!=', 'validate')])
+                                                             ('state', '=', 'validate')])
         nomina = self.env['hr.payslip'].search([('id', '=', payslip_id)])
         for sec in incidencia:
             fechai = sec.date_from.strftime("%m-%Y")
             fecha_nomina = nomina.date_from.strftime("%m-%Y")
             if fechai == fecha_nomina:
-                dias += sec.number_of_days
-        return dias
+                hours += sec.number_of_hours_display
+        return hours
 
     # Obtener el importe de Vacaciones a Simultaneas
     def get_imp_vacaciones_a_simultaneas(self):
