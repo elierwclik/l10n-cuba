@@ -63,9 +63,14 @@ class LoadInitPayslipRun(models.TransientModel):
 
                         self.env['hr.vacaciones'].create(vals)
                     else:
+                        empleados.vaca_dias_acum_init = dias
+                        empleados.vaca_imp_acum_init = importe
+                        empleados.vaca_dias_acum = dias
+                        empleados.vaca_imp_acum = importe
                         vacas = self.env['hr.vacaciones'].search([('employee_id', '=', empleados.id)])
-
-                        vacas.update({'dias_inicial': round(empleados.vaca_dias_acum_init, 2)},
-                                     {'importe_inicial': round(empleados.vaca_imp_acum_init, 2)},
-                                     {'dias_final': round(empleados.vaca_dias_acum_init, 2)},
-                                     {'importe_final': round(empleados.vaca_imp_acum_init, 2)})
+                        vacas.write({
+                            'dias_inicial': round(empleados.vaca_dias_acum_init, 2),
+                            'importe_inicial': round(empleados.vaca_imp_acum_init, 2),
+                            'dias_final': round(empleados.vaca_dias_acum_init, 2),
+                            'importe_final': round(empleados.vaca_imp_acum_init, 2),
+                        })
