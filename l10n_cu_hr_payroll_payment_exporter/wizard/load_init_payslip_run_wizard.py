@@ -1,11 +1,12 @@
 import base64
 import io
+import logging
 from datetime import datetime
 
 from odoo import models, fields
 from odoo.exceptions import ValidationError
 from xlrd import open_workbook
-
+_logger = logging.getLogger(__name__)
 
 # wizard para el submayor de vacaciones
 class LoadInitPayslipRun(models.TransientModel):
@@ -35,10 +36,10 @@ class LoadInitPayslipRun(models.TransientModel):
                 dias = sheet.cell(i, 2).value
                 importe = sheet.cell(i, 3).value
                 ci = sheet.cell(i, 4).value
-
+                _logger.info("No. Identificacion %s " % ci)
                 empleados = self.env['hr.employee'].search([('identification_id', '=', str(ci))])
-
-                if empleados:
+                _logger.info("Empleado %s " % empleados.name)
+                if empleados:   
                     if empleados.vaca_dias_acum_init == 0:
                         empleados.vaca_dias_acum_init = dias
                         empleados.vaca_imp_acum_init = importe
