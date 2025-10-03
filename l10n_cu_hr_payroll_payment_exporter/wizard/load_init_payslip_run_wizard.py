@@ -34,7 +34,7 @@ class LoadInitPayslipRun(models.TransientModel):
             for i in range(1, sheet.nrows):
                 dias = sheet.cell(i, 2).value
                 importe = sheet.cell(i, 3).value
-                ci = int(sheet.cell(i, 4).value)
+                ci = sheet.cell(i, 4).value
 
                 empleados = self.env['hr.employee'].search([('identification_id', '=', str(ci))])
 
