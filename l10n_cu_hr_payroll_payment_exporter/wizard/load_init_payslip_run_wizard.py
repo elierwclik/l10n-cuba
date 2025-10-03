@@ -36,8 +36,12 @@ class LoadInitPayslipRun(models.TransientModel):
                 dias = sheet.cell(i, 2).value
                 importe = sheet.cell(i, 3).value
                 ci = sheet.cell(i, 4).value
+                if isinstance(ci, float) and ci.is_integer():
+                    ci = str(int(ci))
+                else:
+                    ci = str(ci)
                 _logger.info("No. Identificacion %s " % ci)
-                empleados = self.env['hr.employee'].search([('identification_id', '=', str(ci))])
+                empleados = self.env['hr.employee'].search([('identification_id', '=', ci)])
                 _logger.info("Empleado %s " % empleados.name)
                 if empleados:   
                     if empleados.vaca_dias_acum_init == 0:
