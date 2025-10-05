@@ -168,7 +168,7 @@ class PayslipsRun(models.Model):
                     self.env['hr.employee'].search([('id', '=', items.employee_id.id)]).update(
                         {'vaca_dias_acum': acd, 'vaca_imp_acum': aci})
 
-        self.calculo_acumulados_vac(payslips)
+        #self.calculo_acumulados_vac(payslips)
 
     # calcula y actualiza en cada trabajador su acumulado de vacaciones en dias y en importe
     def calculo_acumulados_vac(self, obj_payslip):
