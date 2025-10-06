@@ -209,6 +209,8 @@ class PayslipsRun(models.Model):
             if sec.employee_id.bank_account_id.acc_number is not False:
 
                 for items in self.env['hr.payslip.line'].search([('slip_id', '=', sec.id)]):
+                    if items.code == 'NET':
+                        SN += items.amount
                     if items.code == 'NETDC':
                         SN += items.amount
                     if items.code == 'NETC':
