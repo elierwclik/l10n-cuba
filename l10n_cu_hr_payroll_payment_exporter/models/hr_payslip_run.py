@@ -203,9 +203,8 @@ class PayslipsRun(models.Model):
 
         payslips = self.env['hr.payslip'].search([('payslip_run_id', 'in', [items.id for items in nomina]),
                                                   ('state', '!=', 'cancel')])
-        SN = 0.00
         for sec in payslips:
-
+            SN = 0.00
             if sec.employee_id.bank_account_id.acc_number is not False:
 
                 for items in self.env['hr.payslip.line'].search([('slip_id', '=', sec.id)]):
