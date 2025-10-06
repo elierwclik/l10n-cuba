@@ -197,8 +197,7 @@ class PayslipsRun(models.Model):
 
         table.open(mode=dbf.READ_WRITE)
 
-        nomina = self.env['hr.payslip.run'].search([('id', '=', self.id),
-                                                    ('date_start', '>=', self.date_start),
+        nomina = self.env['hr.payslip.run'].search([('date_start', '>=', self.date_start),
                                                     ('date_end', '<=', self.date_end),
                                                     ('state', '=', 'done')])
 
