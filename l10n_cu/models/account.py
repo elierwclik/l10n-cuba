@@ -32,7 +32,7 @@ class AccountAccountTag(models.Model):
     nature = fields.Selection([
         ('D', 'Debitable Account'), ('A', 'Creditable Account')])
 
-class AccountChartTemplate(models.Model):
+class AccountChartTemplate(models.AbstractModel):
     _inherit = "account.chart.template"
     
 
