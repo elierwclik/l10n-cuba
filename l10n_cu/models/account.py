@@ -97,7 +97,7 @@ class AccountChartTemplate(models.AbstractModel):
         return journals_to_create[1:]
 
 class AccountGroupTemplate(models.Model):
-    _inherit = "account.group.template"
+    _inherit = "account.group"
 
     reconcile = fields.Boolean(string='Allow Reconciliation')   
     expense_element_detailed = fields.Boolean()
