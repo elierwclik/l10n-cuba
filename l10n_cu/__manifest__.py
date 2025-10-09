@@ -43,5 +43,8 @@
         "views/expense_element_views.xml",
         "security/ir.model.access.csv"
     ],
+    'demo': [
+        'demo/demo_company.xml',
+    ],
     'license': 'LGPL-3',
 }
