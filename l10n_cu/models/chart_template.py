@@ -38,11 +38,11 @@ def preserve_existing_tags_on_taxes(cr, registry, module):
 
 
 class AccountGroupTemplate(models.Model):
-    _name = "account.group.template"
+    _name = "account.group"
     _description = 'Template for Account Groups'
     _order = 'code_prefix_start'
 
-    parent_id = fields.Many2one('account.group.template', ondelete='cascade')
+    parent_id = fields.Many2one('account.group', ondelete='cascade')
     name = fields.Char(required=True)
     code_prefix_start = fields.Char()
     code_prefix_end = fields.Char()
@@ -764,7 +764,7 @@ class AccountChartTemplate(models.Model):
         :param company: company to generate the account groups for
         """
         self.ensure_one()
-        group_templates = self.env['account.group.template'].search([('chart_template_id', '=', self.id)])
+        group_templates = self.env['account.group'].search([('chart_template_id', '=', self.id)])
         template_vals = []
         for group_template in group_templates:
             vals = {
