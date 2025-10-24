@@ -7,7 +7,6 @@
         <field name="street2">Mochilo</field>
         <field name="zip">10400</field>
         <field name="city">Valdepito del Botijo</field>
-        <field name="state_id" ref="base.state_cu_son"/>
         <field name="country_id" ref="base.cu"/>
         <field name="phone">+53 2221 2345</field>
         <field name="email">info@company.cuexample.com</field>
