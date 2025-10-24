@@ -15,14 +15,13 @@
         <field name="model">account.account</field>
         <field name="inherit_id" ref="account.view_account_search"/>
         <field name="arch" type="xml">
-            <xpath expr="//searchpanel[@class='account_root']" position="replace">
+            <xpath expr="//searchpanel[@class='account_root w-auto']" position="replace">
                 <searchpanel>
                     <field name="group_id" icon="fa-filter"/>
                 </searchpanel>
             </xpath>
         </field>
     </record>
-
    
     <!-- analytic.account -->
 
