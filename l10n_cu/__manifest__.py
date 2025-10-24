@@ -27,10 +27,6 @@
     ],
     'data': [
         # 'data/account_chart_data.xml',
-        'data/template/account.account-cu_common.csv',
-        'data/template/account.account-cu_tcp.csv',
-        'data/template/account.account-cu_private.csv',
-        'data/template/account.account-cu_public.csv',
         # 'data/account_chart_post_data.xml',
         'data/account_group_template_data.xml',
         # 'data/account_tax_template_data.xml',
