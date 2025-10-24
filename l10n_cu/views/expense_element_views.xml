@@ -39,7 +39,7 @@
             <field name="model">expense.element</field>
             <field name="arch" type="xml">
                 <tree create="1" delete="1" multi_edit="0" string="Element list">
-                    <field name="company_id" invisible="1"/>
+                    <field name="company_id" column_invisible="1"/>
                     <field name="code"/>
                     <field name="name"/>  
                     <field name="parent_id"/>                  
