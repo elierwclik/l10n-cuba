@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="view_partner_form_inherit" model="ir.ui.view">
         <field name="name">view.partner.form.inherit</field>
@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="industry_id" position="after">
-                <field name="l10n_cu_cnae_ids" attrs="{'invisible': [('is_company', '=', False)]}">
+                <field name="l10n_cu_cnae_ids" invisible="not is_company">
                     <tree editable="bottom">
                         <field name="sequence" widget="handle"/>
                         <field name="cnae_id" options="{'no_create': True}"/>
