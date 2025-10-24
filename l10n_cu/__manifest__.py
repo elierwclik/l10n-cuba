@@ -11,6 +11,7 @@
 
 {
     'name': 'Cuba - Contabilidad',
+    'countries': ['cu'],
     'version': '17.0',
     'author': 'Idola Odoo Team, Comunidad cubana de Odoo ',
     'category': 'Accounting/Localizations/Account Charts',
