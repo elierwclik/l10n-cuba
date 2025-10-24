@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_exense_element_form" model="ir.ui.view">
-            <field name="name">expense.element.form</field>
-            <field name="model">expense.element</field>
-            <field name="arch" type="xml">
-                <form string="Account">              
-                        
-                        <field name="company_id" invisible="1"/>
-                        <div>
-                            <h1 style="font-size: 1.9rem;">
-                                <div class="row">
-                                    <div class="col col-md-auto">
-                                        <label for="code" string="Code"/>
-                                        <div>
-                                            <field name="code" placeholder="ej. 10000" class="oe_inline"/>
-                                            <field name="parent_id"/>
-                                        </div>
-                                
-                                        <label for="name" string="Element name"/>
-                                        <div>
-                                            <field name="name"
-                                                   placeholder="ej. Materias Primas y Materiales"
-                                                   class="oe_inline"
-                                                   style="width:80% !important;"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <field name="company_id" invisible="1"/>
-                            </h1>
-                        </div>
-                </form>
-            </field>
-        </record>
+<!--        <record id="view_exense_element_form" model="ir.ui.view">-->
+<!--            <field name="name">expense.element.form</field>-->
+<!--            <field name="model">expense.element</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Account">              -->
+<!--                        -->
+<!--                        <field name="company_id" invisible="1"/>-->
+<!--                        <div>-->
+<!--                            <h1 style="font-size: 1.9rem;">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col col-md-auto">-->
+<!--                                        <label for="code" string="Code"/>-->
+<!--                                        <div>-->
+<!--                                            <field name="code" placeholder="ej. 10000" class="oe_inline"/>-->
+<!--                                            <field name="parent_id"/>-->
+<!--                                        </div>-->
+<!--                                -->
+<!--                                        <label for="name" string="Element name"/>-->
+<!--                                        <div>-->
+<!--                                            <field name="name"-->
+<!--                                                   placeholder="ej. Materias Primas y Materiales"-->
+<!--                                                   class="oe_inline"-->
+<!--                                                   style="width:80% !important;"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <field name="company_id" invisible="1"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
 
         <record id="view_exense_element_list" model="ir.ui.view">
             <field name="name">expense.element.list</field>
