@@ -1,4 +1,4 @@
-"id","name","tax_ids/tax_src_id","tax_ids/tax_dest_id","name@es"
+"id","name","tax_ids/tax_src_id","tax_ids/tax_dest_id"
 "account_fiscal_position_foreign","Foreign Customer","tax14","tax13","Cliente extranjero"
 "","","tax12","tax9",""
 "","","tax17","tax9",""

@@ -1,4 +1,4 @@
-"id","name","code_prefix_start","name@es"
+"id","name","code_prefix_start"
 "account_group_activos","Active","1","Activos"
 "account_subgroup_activo_a_corto_plazo","Short-term assets","100.01","Activo a corto plazo"
 "account_subgroup_caja","Cash","101","Caja"

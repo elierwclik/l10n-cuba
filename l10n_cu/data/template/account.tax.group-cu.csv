@@ -1,4 +1,4 @@
-"id","name","country_id","name@es"
+"id","name","country_id"
 "tax_group_iva_0","VAT 0%","base.cu","IVA 0%"
 "tax_group_iva_16","VAT 16%","base.cu","IVA 16%"
 "tax_group_iva_8","VAT 8%","base.cu","IVA 8%"
