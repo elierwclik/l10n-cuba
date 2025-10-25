@@ -11,6 +11,7 @@
 
 {
     'name': 'Cuba - Contabilidad',
+    'countries': ['cu'],
     'version': '17.0',
     'author': 'Idola Odoo Team, Comunidad cubana de Odoo ',
     'category': 'Accounting/Localizations/Account Charts',
@@ -27,12 +28,8 @@
     ],
     'data': [
         # 'data/account_chart_data.xml',
-        'data/account.account.template-common.csv',
-        'data/account.account.template-tcp.csv',
-        'data/account.account.template-private.csv',
-        'data/account.account.template-public.csv',
         # 'data/account_chart_post_data.xml',
-        'data/account_group_template_data.xml',
+        #'data/account_group_template_data.xml',
         # 'data/account_tax_template_data.xml',
         # 'data/account_fiscal_position_template_data.xml',
         # 'data/account_fiscal_position_tax_template_data.xml',

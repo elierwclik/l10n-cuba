@@ -49,69 +49,69 @@ class AccountGroupTemplate(models.Model):
     chart_template_id = fields.Many2one('account.chart.template', string='Chart Template', required=True)
 
 
-class AccountAccountTemplate(models.Model):
-    _name = "account.account.template"
-    _inherit = ['mail.thread']
-    _description = 'Templates for Accounts'
-    _order = "code"
-
-    name = fields.Char(required=True)
-    currency_id = fields.Many2one('res.currency', string='Account Currency', help="Forces all moves for this account to have this secondary currency.")
-    code = fields.Char(size=64, required=True)
-    account_type = fields.Selection(
-        selection=[
-            ("asset_receivable", "Receivable"),
-            ("asset_cash", "Bank and Cash"),
-            ("asset_current", "Current Assets"),
-            ("asset_non_current", "Non-current Assets"),
-            ("asset_prepayments", "Prepayments"),
-            ("asset_fixed", "Fixed Assets"),
-            ("liability_payable", "Payable"),
-            ("liability_credit_card", "Credit Card"),
-            ("liability_current", "Current Liabilities"),
-            ("liability_non_current", "Non-current Liabilities"),
-            ("equity", "Equity"),
-            ("equity_unaffected", "Current Year Earnings"),
-            ("income", "Income"),
-            ("income_other", "Other Income"),
-            ("expense", "Expenses"),
-            ("expense_depreciation", "Depreciation"),
-            ("expense_direct_cost", "Cost of Revenue"),
-            ("off_balance", "Off-Balance Sheet"),
-        ],
-        string="Type",
-        help="These types are defined according to your country. The type contains more information "\
-        "about the account and its specificities."
-    )
-    reconcile = fields.Boolean(string='Allow Invoices & payments Matching', default=False,
-        help="Check this option if you want the user to reconcile entries in this account.")
-    note = fields.Text()
-    tax_ids = fields.Many2many('account.tax.template', 'account_account_template_tax_rel', 'account_id', 'tax_id', string='Default Taxes')
-    nocreate = fields.Boolean(string='Optional Create', default=False,
-        help="If checked, the new chart of accounts will not contain this by default.")
-    chart_template_id = fields.Many2one('account.chart.template', string='Chart Template',
-        help="This optional field allow you to link an account template to a specific chart template that may differ from the one its root parent belongs to. This allow you "
-            "to define chart templates that extend another and complete it with few new accounts (You don't need to define the whole structure that is common to both several times).")
-    tag_ids = fields.Many2many('account.account.tag', 'account_account_template_account_tag', string='Account tag', help="Optional tags you may want to assign for custom reporting")
-
-    @api.depends('name', 'code')
-    def name_get(self):
-        res = []
-        for record in self:
-            name = record.name
-            if record.code:
-                name = record.code + ' ' + name
-            res.append((record.id, name))
-        return res
-
-    @api.constrains('code')
-    def _check_account_code(self):
-        for account in self:
-            if not re.match(ACCOUNT_CODE_REGEX, account.code):
-                raise ValidationError(_(
-                    "The account code can only contain alphanumeric characters and dots."
-                ))
-
+# class AccountAccountTemplate(models.Model):
+#     _name = "account.account.template"
+#     _inherit = ['mail.thread']
+#     _description = 'Templates for Accounts'
+#     _order = "code"
+#
+#     name = fields.Char(required=True)
+#     currency_id = fields.Many2one('res.currency', string='Account Currency', help="Forces all moves for this account to have this secondary currency.")
+#     code = fields.Char(size=64, required=True)
+#     account_type = fields.Selection(
+#         selection=[
+#             ("asset_receivable", "Receivable"),
+#             ("asset_cash", "Bank and Cash"),
+#             ("asset_current", "Current Assets"),
+#             ("asset_non_current", "Non-current Assets"),
+#             ("asset_prepayments", "Prepayments"),
+#             ("asset_fixed", "Fixed Assets"),
+#             ("liability_payable", "Payable"),
+#             ("liability_credit_card", "Credit Card"),
+#             ("liability_current", "Current Liabilities"),
+#             ("liability_non_current", "Non-current Liabilities"),
+#             ("equity", "Equity"),
+#             ("equity_unaffected", "Current Year Earnings"),
+#             ("income", "Income"),
+#             ("income_other", "Other Income"),
+#             ("expense", "Expenses"),
+#             ("expense_depreciation", "Depreciation"),
+#             ("expense_direct_cost", "Cost of Revenue"),
+#             ("off_balance", "Off-Balance Sheet"),
+#         ],
+#         string="Type",
+#         help="These types are defined according to your country. The type contains more information "\
+#         "about the account and its specificities."
+#     )
+#     reconcile = fields.Boolean(string='Allow Invoices & payments Matching', default=False,
+#         help="Check this option if you want the user to reconcile entries in this account.")
+#     note = fields.Text()
+#     tax_ids = fields.Many2many('account.tax.template', 'account_account_template_tax_rel', 'account_id', 'tax_id', string='Default Taxes')
+#     nocreate = fields.Boolean(string='Optional Create', default=False,
+#         help="If checked, the new chart of accounts will not contain this by default.")
+#     chart_template_id = fields.Many2one('account.chart.template', string='Chart Template',
+#         help="This optional field allow you to link an account template to a specific chart template that may differ from the one its root parent belongs to. This allow you "
+#             "to define chart templates that extend another and complete it with few new accounts (You don't need to define the whole structure that is common to both several times).")
+#     tag_ids = fields.Many2many('account.account.tag', 'account_account_template_account_tag', string='Account tag', help="Optional tags you may want to assign for custom reporting")
+#
+#     @api.depends('name', 'code')
+#     def name_get(self):
+#         res = []
+#         for record in self:
+#             name = record.name
+#             if record.code:
+#                 name = record.code + ' ' + name
+#             res.append((record.id, name))
+#         return res
+#
+#     @api.constrains('code')
+#     def _check_account_code(self):
+#         for account in self:
+#             if not re.match(ACCOUNT_CODE_REGEX, account.code):
+#                 raise ValidationError(_(
+#                     "The account code can only contain alphanumeric characters and dots."
+#                 ))
+#
 
 class AccountChartTemplate(models.Model):
     _name = "account.chart.template"
@@ -126,15 +126,15 @@ class AccountChartTemplate(models.Model):
     currency_id = fields.Many2one('res.currency', string='Currency', required=True)
     use_anglo_saxon = fields.Boolean(string="Use Anglo-Saxon accounting", default=False)
     use_storno_accounting = fields.Boolean(string="Use Storno accounting", default=False)
-    account_ids = fields.One2many('account.account.template', 'chart_template_id', string='Associated Account Templates')
+    account_ids = fields.One2many('account.account', 'chart_template_id', string='Associated Account Templates')
     tax_template_ids = fields.One2many('account.tax.template', 'chart_template_id', string='Tax Template List',
         help='List of all the taxes that have to be installed by the wizard')
     bank_account_code_prefix = fields.Char(string='Prefix of the bank accounts', required=True)
     cash_account_code_prefix = fields.Char(string='Prefix of the main cash accounts', required=True)
     transfer_account_code_prefix = fields.Char(string='Prefix of the main transfer accounts', required=True)
-    income_currency_exchange_account_id = fields.Many2one('account.account.template',
+    income_currency_exchange_account_id = fields.Many2one('account.account',
         string="Gain Exchange Rate Account", domain=[('account_type', 'not in', ('asset_receivable', 'liability_payable', 'asset_cash', 'liability_credit_card')), ('deprecated', '=', False)])
-    expense_currency_exchange_account_id = fields.Many2one('account.account.template',
+    expense_currency_exchange_account_id = fields.Many2one('account.account',
         string="Loss Exchange Rate Account", domain=[('account_type', 'not in', ('asset_receivable', 'liability_payable', 'asset_cash', 'liability_credit_card')), ('deprecated', '=', False)])
     country_id = fields.Many2one(string="Country", comodel_name='res.country', help="The country this chart of accounts belongs to. None if it's generic.")
 
@@ -744,7 +744,7 @@ class AccountChartTemplate(models.Model):
         :rtype: dict
         """
         self.ensure_one()
-        account_tmpl_obj = self.env['account.account.template']
+        account_tmpl_obj = self.env['account.account']
         acc_template = account_tmpl_obj.search([('nocreate', '!=', True), ('chart_template_id', '=', self.id)], order='id')
         template_vals = []
         for account_template in acc_template:
