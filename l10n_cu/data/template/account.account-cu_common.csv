@@ -1,4 +1,4 @@
-id,name,code,account_type,tag_ids,reconcile
+"id","code","account_type","name","reconcile","name@es"
 account_common_106,Efectivo en Caja-Ingresos  por depositar en banco,106,asset_cash,"",0,Efectivo en Caja-Ingresos  por depositar en banco
 account_common_107,Efectivo en Caja-Pagos  por depositar en banco,107,asset_cash,"",0,Efectivo en Caja-Pagos  por depositar en banco
 account_common_120,Inversiones a corto plazo o temporales,120,asset_current,"",0,Inversiones a corto plazo o temporales
