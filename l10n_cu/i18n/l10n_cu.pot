@@ -1,0 +1,611 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20250205\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-31 03:46+0000\n"
+"PO-Revision-Date: 2025-10-31 03:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_account
+msgid "Account"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_chart_template
+msgid "Account Chart Template"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_group
+msgid "Account Group"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_account_tag
+msgid "Account Tag"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,help:l10n_cu.field_account_account__account_type
+#: model:ir.model.fields,help:l10n_cu.field_account_group__account_type
+msgid ""
+"Account Type is used for information purpose, to generate country-specific "
+"legal reports, and set the rules to close a fiscal year and generate opening"
+" entries."
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__reconcile
+msgid "Allow Reconciliation"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_analytic_account
+msgid "Analytic Account"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_line__analytic_account_parent_id
+msgid "Analytic Account Parent"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_line__analytic_element_id
+msgid "Analytic Element"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_account_analytic_line
+msgid "Analytic Line"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "BILL"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Bank"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Bank Suspense Account"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_cash
+msgid "Bank and Cash"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "CABA"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_res_cnae
+msgid "CNAE"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_res_cnae_line
+msgid "CNAE Line"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cannot generate an unused account code."
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash Basis Taxes"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash Difference Gain"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash Difference Loss"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash Discount Gain"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash Discount Loss"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Cash basis transition account"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,help:l10n_cu.field_account_group__reconcile
+msgid ""
+"Check this box if accounts belonging this account group allows invoices & "
+"payments matching of journal items."
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__child_ids
+msgid "Child"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_partner__l10n_cu_cnae_ids
+#: model:ir.model.fields,field_description:l10n_cu.field_res_users__l10n_cu_cnae_ids
+msgid "Clase económica a la que pertenece (CNAE)"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__cnae_id
+msgid "Clasificador Nacional de Activdades Económicas"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__code
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__note
+msgid "Content and Usage"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__expense_direct_cost
+msgid "Cost of Revenue"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid ""
+"Could not install new chart of account as there are already accounting "
+"entries existing."
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__create_uid
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__create_uid
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__create_date
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__create_date
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__liability_credit_card
+msgid "Credit Card"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_account_tag__nature__a
+msgid "Creditable Account"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_current
+msgid "Current Assets"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__liability_current
+msgid "Current Liabilities"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__equity_unaffected
+msgid "Current Year Earnings"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Customer Invoices"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_account_tag__nature__d
+msgid "Debitable Account"
+msgstr ""
+
+#. module: l10n_cu
+#: model_terms:ir.ui.view,arch_db:l10n_cu.view_account_group_form_inherit
+msgid "Default account values for this group new accounts"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__expense_depreciation
+msgid "Depreciation"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__display_name
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__display_name
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "EXCH"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_account__element_id
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_line__element_id
+msgid "Element"
+msgstr ""
+
+#. module: l10n_cu
+#: model_terms:ir.ui.view,arch_db:l10n_cu.view_exense_element_list
+msgid "Element list"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_account__element_detailed
+msgid "Element_detailed"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__equity
+msgid "Equity"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Exchange Difference"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.actions.act_window,name:l10n_cu.action_account_expense_element_form
+#: model:ir.ui.menu,name:l10n_cu.sale_menu_config_account_expense_element
+msgid "Expense Elements"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model,name:l10n_cu.model_expense_element
+msgid "Expense element"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_account__expense_element_detailed
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__expense_element_detailed
+msgid "Expense element detailed?"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__expense
+msgid "Expenses"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_fixed
+msgid "Fixed Assets"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Foreign account (%s)"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Foreign tax account (%s)"
+msgstr ""
+
+#. module: l10n_cu
+#: model_terms:ir.ui.view,arch_db:l10n_cu.app_view_account_search
+msgid "Group"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__group_template_id
+msgid "Group Template"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__group_template_parent_id
+msgid "Group Template Parent"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__id
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__id
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "INV"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__income
+msgid "Income"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Invoices/Bills Partial Match if Underpaid"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Invoices/Bills Perfect Match"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.constraint,message:l10n_cu.constraint_res_cnae_line_check_cnae_id
+msgid "Las actividades economicas deben ser unicas.!"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__write_uid
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__write_uid
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__write_date
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__write_date
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Liquidity Transfer"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "MISC"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Miscellaneous Operations"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__name
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_account_tag__nature
+msgid "Nature"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_non_current
+msgid "Non-current Assets"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__liability_non_current
+msgid "Non-current Liabilities"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__off_balance
+msgid "Off-Balance Sheet"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid ""
+"Only 'tax_tags' expressions can be linked to a tax repartition line "
+"template."
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Only administrators can load a chart of accounts"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__income_other
+msgid "Other Income"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Outstanding Payments"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Outstanding Receipts"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_analytic_account__parent_id
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__parent_id
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_expense_element__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__liability_payable
+msgid "Payable"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Please first define a fiscal country for company %s."
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_prepayments
+msgid "Prepayments"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields.selection,name:l10n_cu.selection__account_group__account_type__asset_receivable
+msgid "Receivable"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae__industry_id
+msgid "Sector"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_res_cnae_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid ""
+"Tax distribution line templates should apply to either invoices or refunds, "
+"not both at the same time. invoice_tax_id and refund_tax_id should not be "
+"set together."
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,field_description:l10n_cu.field_account_account__account_type
+#: model:ir.model.fields,field_description:l10n_cu.field_account_group__account_type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_cu
+#: model:ir.model.fields,help:l10n_cu.field_res_cnae_line__sequence
+msgid ""
+"Usado para organizar las actividades. La Actividad Principal será la de "
+"primer orden."
+msgstr ""
+
+#. module: l10n_cu
+#. odoo-python
+#: code:addons/l10n_cu/models/template_cu.py:0
+#, python-format
+msgid "Vendor Bills"
+msgstr ""
