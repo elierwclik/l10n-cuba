@@ -27,15 +27,8 @@
         'account',
     ],
     'data': [
-        # 'data/account_chart_data.xml',
-        # 'data/account_chart_post_data.xml',
-        #'data/account_group_template_data.xml',
-        # 'data/account_tax_template_data.xml',
-        # 'data/account_fiscal_position_template_data.xml',
-        # 'data/account_fiscal_position_tax_template_data.xml',
-        # 'data/account_chart_template_data.xml',
         # 'data/res_cnae_data.xml',
-        "views/account_views.xml",
+        #"views/account_views.xml",
         "views/res_company_views.xml",
         "views/expense_element_views.xml",
         "security/ir.model.access.csv"
