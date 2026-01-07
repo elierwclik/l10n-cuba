@@ -19,3 +19,7 @@ class Partner(models.Model):
     def _onchange_state_id(self):
         if self.res_municipality_id not in self.state_id.res_municipality_ids:
             self.res_municipality_id = False
+
+    @api.model
+    def _address_fields(self):
+        return super()._address_fields() + ['res_municipality_id']
