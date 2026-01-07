@@ -4,8 +4,13 @@ from odoo import api, fields, models, _, Command
 class DeliveryCarrier(models.Model):
     _inherit = 'delivery.carrier'
 
-    res_municipality_ids = fields.Many2many('res.municipality', 'delivery_carrier_municipality_rel', 'carrier_id',
-                                            'res_municipality_id', 'Municipalities')
+    res_municipality_ids = fields.Many2many(
+        'res.municipality',
+        'delivery_carrier_municipality_rel',
+        'carrier_id',
+        'res_municipality_id',
+        'Municipalities'
+    )
 
     @api.onchange('state_ids')
     def _onchange_state_ids(self):

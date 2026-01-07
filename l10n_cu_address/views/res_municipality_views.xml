@@ -40,7 +40,7 @@
                     <field name="name"/>
                     <field name="country_id"/>
                     <field name="state_id"/>
-                    <group string="Group By">
+                    <group name="Group By">
                         <filter name="groupby_country" string="País" context="{'group_by': 'country_id'}"/>
                         <filter name="groupby_state" string="Estado" context="{'group_by': 'state_id'}"/>
                     </group>

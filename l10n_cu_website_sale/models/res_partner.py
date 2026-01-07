@@ -7,6 +7,7 @@ from odoo import models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    # todo - remove from 16.0 ( use _formatting_address_fields )
     def _prepare_display_address(self, without_company=False):
         """
         get the information that will be injected into the display format
@@ -15,6 +16,8 @@ class ResPartner(models.Model):
         :return:
         """
 
-        address_format, args = super(ResPartner, self)._prepare_display_address(without_company=without_company)
+        address_format, args = super(ResPartner, self)._prepare_display_address(
+            without_company=without_company
+        )
         args['municipality_name'] = self.res_municipality_id.name or ''
         return address_format, args

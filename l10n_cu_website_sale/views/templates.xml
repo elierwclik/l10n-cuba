@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <template id="l10n_cu_website_sale_address" name="Address Management Cuban Localizations" inherit_id="website_sale.address">
-        <xpath expr="//div[contains(@id, 'div_state')]" position="after">
+    <template id="l10n_cu_address_form_fields" inherit_id="portal.address_form_fields" name="Address Details">
+        <xpath expr="//div[@id='div_state']" position="after">
             <div class="w-100"/>
             <div id="div_municipality" class="col-lg-6 mb-2"
                  t-att-style="not state_municipalities and 'display: none'">

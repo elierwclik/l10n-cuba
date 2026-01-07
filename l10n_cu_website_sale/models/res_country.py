@@ -8,6 +8,7 @@ class ResCountry(models.Model):
     city_required = fields.Boolean(default=True, string='City Required')
     municipality_required = fields.Boolean(default=False, string='Municipality Required')
 
+    # todo - remove from 16.0 ( use _formatting_address_fields )
     @api.constrains('address_format')
     def _check_address_format(self):
         """
@@ -16,10 +17,12 @@ class ResCountry(models.Model):
         """
         for record in self:
             if record.address_format:
-                address_fields = self.env['res.partner']._formatting_address_fields() + ['state_code', 'state_name',
-                                                                                         'country_code',
-                                                                                         'country_name', 'company_name',
-                                                                                         'municipality_name']
+                address_fields = self.env['res.partner']._formatting_address_fields() + [
+                    'state_code', 'state_name',
+                    'country_code',
+                    'country_name', 'company_name',
+                    'municipality_name'
+                ]
                 try:
                     record.address_format % {i: 1 for i in address_fields}
                 except (ValueError, KeyError):

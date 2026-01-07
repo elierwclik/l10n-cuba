@@ -2,22 +2,30 @@
 from odoo import http, _
 from odoo.http import request
 
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
-class L10nCuWebsiteSale(WebsiteSale):
+class L10nCuWebsiteSale(CustomerPortal):
 
-    def _prepare_address_form_values(self, order_sudo, partner_sudo, address_type, **kwargs):
+    def _prepare_address_form_values(
+            self,
+            *args,
+            callback='',
+            order_sudo=False,
+            **kwargs
+    ):
         rendering_values = super()._prepare_address_form_values(
-            order_sudo, partner_sudo, address_type=address_type, **kwargs
+            *args, callback=callback, order_sudo=order_sudo, **kwargs
         )
-
-        state = request.env['res.country.state'].browse(rendering_values['state_id'])
+        current_partner_id = rendering_values['current_partner']
+        state = request.env['res.country.state'].browse(
+            rendering_values['state_id']
+        )
         ResMunicipality = request.env['res.municipality'].sudo()
 
         rendering_values.update({
             'state': state,
-            'res_municipality_id': partner_sudo.res_municipality_id.id,
+            'res_municipality_id': current_partner_id.res_municipality_id.id,
             'state_municipalities': ResMunicipality.search([('state_id', '=', state.id)]) if state else ResMunicipality,
         })
         return rendering_values
@@ -50,13 +58,19 @@ class L10nCuWebsiteSale(WebsiteSale):
             mandatory_fields.remove('city')
         return mandatory_fields
 
-    @http.route(['/shop/l10n_cu/state_infos/<model("res.country.state"):state>'], type="json", auth="public",
-                methods=["POST"], website=True)
+    @http.route(
+        ['/l10n_cu/state_infos/<model("res.country.state"):state>'],
+        type="jsonrpc",
+        auth="public",
+        methods=["POST"],
+        website=True
+    )
     def l10n_cu_state_infos(self, state, address_type, **kw):
         """
-        @note: In Odoo 18.1 has been changed 'type="json"' to 'type="jsonrpc"'
-        """
+        Return state municipalities and municipality requirement flag.
 
+        :rtype: dict
+        """
         return {
             'municipalities': [(c.id, c.name, c.code) for c in state.sudo().res_municipality_ids],
             'municipality_required': state.country_id.code == 'CU'
