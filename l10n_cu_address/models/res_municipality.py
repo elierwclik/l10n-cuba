@@ -12,7 +12,6 @@ class Municipality(models.Model):
     code = fields.Char('Code', help='El código del municipio', required=True)
     country_id = fields.Many2one('res.country', string='Country', required=True)
     state_id = fields.Many2one('res.country.state', 'State', domain="[('country_id', '=', country_id)]")
-#    zipcode = fields.Many2one('res.city', string='Zip')
 
     _sql_constraints = [
         ('name_code_uniq', 'unique(state_id, code)', '¡El código del municipio debe ser único por provincia!')
