@@ -3,7 +3,6 @@
 from odoo import api, models, fields
 from odoo.osv import expression
 
-
 class Municipality(models.Model):
     _name = 'res.municipality'
     _description = 'Municipio'
@@ -17,9 +16,3 @@ class Municipality(models.Model):
     _sql_constraints = [
         ('name_code_uniq', 'unique(state_id, code)', '¡El código del municipio debe ser único por provincia!')
     ]
-
-    @api.onchange('country_id')
-    def _onchange_country_id(self):
-        self.state_id -= self.state_id.filtered(
-            lambda state: state._origin.id not in self.country_id.state_ids.ids
-        )
