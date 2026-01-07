@@ -9,11 +9,7 @@ class Partner(models.Model):
     res_municipality_id = fields.Many2one('res.municipality', 'Municipio', domain="[('state_id', '=', state_id)]",
                                           help="Municipios de Cuba")
 
-    @api.model
-    def _clean_and_fix_res_municipality_id(self):
-        partners = self.env['res.partner'].search([]).filtered(
-            lambda p: p.res_municipality_id and p.res_municipality_id.id not in p.state_id.res_municipality_ids.ids)
-        partners.write({'res_municipality_id': False})
+    municipality_name = fields.Char(string="Nombre del Municipio", related='res_municipality_id.name')
 
     @api.onchange('state_id')
     def _onchange_state_id(self):
@@ -22,4 +18,4 @@ class Partner(models.Model):
 
     @api.model
     def _address_fields(self):
-        return super()._address_fields() + ['res_municipality_id']
+        return super()._address_fields() + ['municipality_name']
