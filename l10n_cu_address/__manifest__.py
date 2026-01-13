@@ -8,7 +8,7 @@
 
 {
     "name" : "Topónimos Cubanos",
-    "version" : "18.0.2.0.1",
+    "version" : "20.0.1",
     "author" : "Idola Odoo Team, Comunidad cubana de Odoo",
     "category": "Localization",
     "depends" : [
@@ -22,9 +22,7 @@
         'views/res_municipality_views.xml',
         'views/res_partner_views.xml',
         'security/ir.model.access.csv',
-
-        # fix's
-        'data/res_municipalities_fix.xml'
+        'data/res_country_data.xml'
     ],
     "auto_install": True,
 
