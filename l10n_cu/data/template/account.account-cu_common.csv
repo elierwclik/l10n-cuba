@@ -9,6 +9,7 @@ account_common_1300040,Efectos por cobrar a corto plazo - Dentro del Grupo Empre
 account_common_1300050,Efectos por cobrar a corto plazo - Sector Cooperativo,130.0050,asset_receivable,1,Activo Circulante
 account_common_1300060,Efectos por cobrar a corto plazo - Personas Naturales,130.0060,asset_receivable,1,Activo Circulante
 account_common_1340000,Cuenta en Participación,134.0000,asset_receivable,1,Activo Circulante
+account_common_1350000,Cuentas por cobrar,135.0000,asset_receivable,1,Activo Circulante
 account_common_1350010,Cuentas por cobrar a corto plazo - Dentro del Organo u Organismo,135.0010,asset_receivable,1,Activo Circulante
 account_common_1350020,Cuentas por cobrar a corto plazo - Fuera del Organo u Organismo,135.0020,asset_receivable,1,Activo Circulante
 account_common_1350030,Cuentas por cobrar a corto plazo - En el Extranjero,135.0030,asset_receivable,1,Activo Circulante
@@ -219,6 +220,7 @@ account_common_4010030,Efectos por Pagar a Corto Plazo - En el Extranjero,401.00
 account_common_4010040,Efectos por Pagar a Corto Plazo - Dentro del Grupo Empresarial,401.0040,liability_payable,1,Pasivos Circulantes
 account_common_4010050,Efectos por Pagar a Corto Plazo - Sector Cooperativo,401.0050,liability_payable,1,Pasivos Circulantes
 account_common_4010060,Efectos por Pagar a Corto Plazo - Personas Naturales,401.0060,liability_payable,1,Pasivos Circulantes
+account_common_4050000,Cuentas por Pagar a Corto Plazo,405.0000,liability_payable,1,Pasivos Circulantes
 account_common_4050010,Cuentas por Pagar a Corto Plazo - Dentro del Organo u Organismo,405.0010,liability_payable,1,Pasivos Circulantes
 account_common_4050020,Cuentas por Pagar a Corto Plazo - Fuera del Organo u Organismo,405.0020,liability_payable,1,Pasivos Circulantes
 account_common_4050030,Cuentas por Pagar a Corto Plazo - En el Extranjero,405.0030,liability_payable,1,Pasivos Circulantes
@@ -333,6 +335,8 @@ account_common_5800030,Cuentas por Pagar con Sentencia Firme - En el Extranjero,
 account_common_5800040,Cuentas por Pagar con Sentencia Firme - Dentro del Grupo Empresarial,580.0040,liability_payable,1,Otros Pasivos
 account_common_5800050,Cuentas por Pagar con Sentencia Firme - Sector Cooperativo,580.0050,liability_payable,1,Otros Pasivos
 account_common_5800060,Cuentas por Pagar con Sentencia Firme - Personas Naturales,580.0060,liability_payable,1,Otros Pasivos
+account_common_6960000,Operaciones entre Dependencias,696.0000,equity,0,Patrimonio Neto
+account_common_6990000,Transitoria de Sistemas Automatizados,699.0000,asset_current,1,Transitoria para Sistemas Automatizados
 account_common_6991000,Transitoria del Inventario de Entrada,699.1000,asset_current,1,Transitoria para la Entrada de Inventario
 account_common_6992000,Transitoria del Inventario de Salida,699.2000,asset_current,1,Transitoria para la Salida de Inventario
 account_common_6993000,Transitoria de Base de Efectivo,699.3000,asset_current,1,

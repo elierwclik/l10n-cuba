@@ -1,5 +1,4 @@
 id,name,code,account_type,reconcile,note
-account_tcp_1350000,Cuentas por Cobrar,135.0000,asset_receivable,True,Grupo de Activos (10) - Activos Circulantes (10.1)
 account_tcp_1460000,Pagos Anticipados,146.0000,asset_prepayments,True,Grupo de Activos (10) - Activos Circulantes (10.1)
 account_tcp_2000000,Activos Fijos Tangibles,200.0000,asset_fixed,False,Grupo de Activos (10) - Activos Fijos (10.2)
 account_tcp_2560000,Inversiones en Proceso,256.0000,asset_current,False,Grupo de Activos (10) - Activos Fijos (10.2)
