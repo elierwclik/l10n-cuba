@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="industry_id" position="after">
-                <field name="l10n_cu_cnae_ids" attrs="{'invisible': [('is_company', '=', False)]}">
+                <field name="l10n_cu_cnae_ids" invisible="is_company == False">
                     <list editable="bottom">
                         <field name="sequence" widget="handle"/>
                         <field name="cnae_id" options="{'no_create': True}"/>
