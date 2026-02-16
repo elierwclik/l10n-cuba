@@ -27,7 +27,6 @@
     ],
     'data': [
         "data/res_cnae_data.xml",
-        # "views/account_views.xml",
         "views/res_company_views.xml",
         "views/expense_element_views.xml",
         "security/ir.model.access.csv"
