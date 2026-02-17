@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="view_state_municipality_search" model="ir.ui.view">
+            <field name="name">res.municipality.search</field>
+            <field name="model">res.municipality</field>
+            <field name="arch" type="xml">
+                <search string="Municipality">
+                    <field name="name"/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                </search>
+            </field>
+        </record>
         <record id="res_municipality_view_list" model="ir.ui.view">
             <field name="name">res_municipality_view_list</field>
             <field name="model">res.municipality</field>
@@ -31,22 +42,6 @@
 
         <menuitem id="menu_res_municipality" action="l10n_cu_address.action_list_municipalities" name="Municipalities"
                   parent="contacts.menu_localisation" sequence="2"/>
-        
-        <record id="view_state_municipality_search" model="ir.ui.view">
-            <field name="name">res.municipality.search</field>
-            <field name="model">res.municipality</field>
-            <field name="arch" type="xml">
-                <search string="State">
-                    <field name="name"/>
-                    <field name="country_id"/>
-                    <field name="state_id"/>
-                    <group string="Group By">
-                        <filter name="groupby_country" string="País" context="{'group_by': 'country_id'}"/>
-                        <filter name="groupby_state" string="Estado" context="{'group_by': 'state_id'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
         
     </data>
 </odoo>
