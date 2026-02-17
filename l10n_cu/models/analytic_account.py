@@ -63,16 +63,11 @@ class AnalyticAccount(models.Model):
     def _constraint_element_code(self):
         pass 
 
-
     def _validate_element_detailed(self):
         for record in self:
             if record.element_id and record.element_detailed:
                 raise ValidationError('Invalid operation. This a analytic account has a related expense element')
 
-
-         
-
-    
     def write(self, vals):
         """ Automatically create new accounts with combination account-element """
         write_res = super(AnalyticAccount, self).write(vals)

@@ -1,0 +1,19 @@
+id,name,code,account_type,reconcile,note
+account_tcp_1460000,Pagos Anticipados,146.0000,asset_prepayments,True,Grupo de Activos (10) - Activos Circulantes (10.1)
+account_tcp_2000000,Activos Fijos Tangibles,200.0000,asset_fixed,False,Grupo de Activos (10) - Activos Fijos (10.2)
+account_tcp_2560000,Inversiones en Proceso,256.0000,asset_current,False,Grupo de Activos (10) - Activos Fijos (10.2)
+account_tcp_3000000,Depreciación de Activos Fijos Tangibles,300.0000,asset_current,False,Grupo de Activos (10) - Cuentas Reguladoras de Activos (10.5)
+account_tcp_6000000,Patrimonio,600.0000,asset_current,False,Grupo de Activos (10) - Activos Circulantes (10.1)
+account_tcp_6000001,Saldo al inicio del ejercicio,600.0001,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6000002,Incrementos de aportes del TCP en el ejercicio contable,600.0002,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6000003,Erogaciones efectuadas por el TCP en el ejercicio contable,600.0003,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6000004,Pagos de Cuotas del Impuesto sobre Ingresos Personales,600.0004,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6000005,Contribución a la Seguridad Social,600.0005,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6100000,Utilidad Retenida,610.0000,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_6200000,Pérdida,620.0000,asset_current,False,Grupo de Patrimonio (30) - Patrimonio del TCP
+account_tcp_7000000,Producción en Proceso,700.0000,asset_current,False,Grupo de Activos (10) - Activos Circulantes (10.1)
+account_tcp_8010000,Costo de Producion y Servicios,801.0000,asset_current,False,Grupo de Cuentas Nominales (40) - Cuentas Nominales Deudoras (40.1)
+account_tcp_8100001,Impuesto sobre las Ventas,810.0001,asset_current,False,Grupo de Cuentas Nominales (40) - Cuentas Nominales Deudoras (40.1)
+account_tcp_8100002,Impuesto sobre los Servicios Públicos,810.0002,asset_current,False,Grupo de Cuentas Nominales (40) - Cuentas Nominales Deudoras (40.1)
+account_tcp_8100003,Impuesto por la Utilización de la Fuerza de Trabajo,810.0003,asset_current,False,Grupo de Cuentas Nominales (40) - Cuentas Nominales Deudoras (40.1)
+account_tcp_8100004,Otros Impuestos y Tasas,810.0004,asset_current,False,Grupo de Cuentas Nominales (40) - Cuentas Nominales Deudoras (40.1)
