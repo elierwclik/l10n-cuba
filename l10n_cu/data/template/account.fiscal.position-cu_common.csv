@@ -1,0 +1,3 @@
+id,sequence,name,note,chart_template_id,country_id
+private_account_fiscal_position_mayorista,1,Ventas Mayoristas (PRIVADO Y COOPERATIVO),Las ventas mayoristas no estan gravadas.,l10n_cu_chart_template_private,base.cu
+private_account_fiscal_position_servicio_persona_jurid,2,Servicios Personas Jurídicas (PRIVADO Y COOPERATIVO),Los servicios a personas jurídicas no estan gravados.,l10n_cu_chart_template_private,base.cu

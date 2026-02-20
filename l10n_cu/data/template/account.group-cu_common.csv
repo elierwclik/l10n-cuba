@@ -1,0 +1,194 @@
+id,code_prefix_start,name,name@es_ES
+account_group_template_activos_circulantes,10,ACTIVOS CIRCULANTES,ACTIVOS CIRCULANTES
+account_group_template_101_108,101,Efectivo en Caja,Efectivo en Caja
+account_group_template_109_119,109,Efectivo en Banco y en Otras Instituciones,Efectivo en Banco y en Otras Instituciones
+account_group_template_120_129,120,Inversiones a Corto Plazo o Temporales,Inversiones a Corto Plazo o Temporales
+account_group_template_130_133,130,Efectos por Cobrar a Corto Plazo,Efectos por Cobrar a Corto Plazo
+account_group_template_134_134,134,Cuenta en Participación,Cuenta en Participación
+account_group_template_135_139,135,Cuentas por Cobrar a Corto Plazo,Cuentas por Cobrar a Corto Plazo
+account_group_template_140_140,140,Pagos por Cuenta de Terceros,Pagos por Cuenta de Terceros
+account_group_template_141_141,141,Participación de Reaseguradores por Siniestros Pendientes,Participación de Reaseguradores por Siniestros Pendientes
+account_group_template_142_142,142,Préstamos y Otras Operaciones Crediticias a Cobrar a Corto Plazo,Préstamos y Otras Operaciones Crediticias a Cobrar a Corto Plazo
+account_group_template_143_143,143,Suscriptores de Bonos,Suscriptores de Bonos
+account_group_template_144_144,144,Bonos Emitidos en Cartera,Bonos Emitidos en Cartera
+account_group_template_146_149,146,Pagos Anticipados a Suministradores,Pagos Anticipados a Suministradores
+account_group_template_150_152,150,Pagos Anticipados del Proceso Inversionista,Pagos Anticipados del Proceso Inversionista
+account_group_template_153_153,153,Materiales Anticipados del Proceso Inversionista,Materiales Anticipados del Proceso Inversionista
+account_group_template_161_163,161,Anticipos a Justificar,Anticipos a Justificar
+account_group_template_164_166,164,Adeudos del Presupuesto del Estado,Adeudos del Presupuesto del Estado
+account_group_template_167_170,167,Adeudos del Órgano u Organismo,Adeudos del Órgano u Organismo
+account_group_template_173_180,173,Ingresos Acumulados por Cobrar,Ingresos Acumulados por Cobrar
+account_group_template_181_181,181,Dividendos y Participaciones por Cobrar,Dividendos y Participaciones por Cobrar
+account_group_template_182_182,182,Ingresos Acumulados por Cobrar - Reaseguros Aceptados,Ingresos Acumulados por Cobrar - Reaseguros Aceptados
+account_group_template_183_183,183,Materias Primas y Materiales,Materias Primas y Materiales
+account_group_template_184_184,184,Combustibles y Lubricantes,Combustibles y Lubricantes
+account_group_template_185_185,185,Partes y Piezas de Repuesto,Partes y Piezas de Repuesto
+account_group_template_186_186,186,Envases y Embalajes,Envases y Embalajes
+account_group_template_187_187,187,Útiles,Útiles
+account_group_template_188_188,188,Producción Terminada,Producción Terminada
+account_group_template_189_189,189,Mercancías para la Venta,Mercancías para la Venta
+account_group_template_190_190,190,Medicamentos,Medicamentos
+account_group_template_191_191,191,Base Material de Estudio,Base Material de Estudio
+account_group_template_192_192,192,Vestuario y Lencería,Vestuario y Lencería
+account_group_template_193_193,193,Alimentos,Alimentos
+account_group_template_194_194,194,Inventarios de Mercancías de Importación,Inventarios de Mercancías de Importación
+account_group_template_195_195,195,Inventarios de Mercancías de Exportación,Inventarios de Mercancías de Exportación
+account_group_template_196_196,196,Producción para Insumo o Autoconsumo,Producción para Insumo o Autoconsumo
+account_group_template_205_207,205,Otros Inventarios,Otros Inventarios
+account_group_template_208_208,208,Inventarios Ociosos,Inventarios Ociosos
+account_group_template_209_209,209,Inventarios de Lento Movimiento,Inventarios de Lento Movimiento
+account_group_template_211_211,211,Créditos Documentarios,Créditos Documentarios
+account_group_template_activo_largo_plazo,21,ACTIVO A LARGO PLAZO,ACTIVO A LARGO PLAZO
+account_group_template_215_217,215,Efectos por Cobrar a Largo Plazo,Efectos por Cobrar a Largo Plazo
+account_group_template_218_220,218,Cuentas por Cobrar a Largo Plazo,Cuentas por Cobrar a Largo Plazo
+account_group_template_221_224,221,Préstamos Concedidos a Cobrar a Largo Plazo,Préstamos Concedidos a Cobrar a Largo Plazo
+account_group_template_225_234,225,Inversiones a Largo Plazo o Permanentes,Inversiones a Largo Plazo o Permanentes
+account_group_template_activos_fijos,24,ACTIVOS FIJOS,ACTIVOS FIJOS
+account_group_template_240_251,240,Activos Fijos Tangibles,Activos Fijos Tangibles
+account_group_template_252_252,252,Fondos Bibliotecarios,Fondos Bibliotecarios
+account_group_template_253_253,253,Medios y Equipos para Alquilar,Medios y Equipos para Alquilar
+account_group_template_254_254,254,Monumentos y Obras de Arte,Monumentos y Obras de Arte
+account_group_template_255_255,255,Activos Fijos Intangibles,Activos Fijos Intangibles
+account_group_template_264_264,264,Activos Fijos Intangibles en Proceso,Activos Fijos Intangibles en Proceso
+account_group_template_265_268,265,Inversiones en Proceso,Inversiones en Proceso
+account_group_template_279_279,279,Plan de Preparación de Inversiones,Plan de Preparación de Inversiones
+account_group_template_280-289,280,Equipos por Instalar y Materiales para el Proceso Inversionista,Equipos por Instalar y Materiales para el Proceso Inversionista
+account_group_template_290_290,290,Adquisición de Activos Fijos Tangibles Nuevos,Adquisición de Activos Fijos Tangibles Nuevos
+account_group_template_291_291,291,Compra de Activos Fijos Tangibles de Uso,Compra de Activos Fijos Tangibles de Uso
+account_group_template_292_292,292,Compra de Activos Fijos Intangibles,Compra de Activos Fijos Intangibles
+account_group_template_activos_diferidos,30,ACTIVOS DIFERIDOS,ACTIVOS DIFERIDOS
+account_group_template_300-305,300,Saldo al Inicio del Año,Saldo al Inicio del Año
+account_group_template_306_307,306,Saldo al Inicio del Año,Saldo al Inicio del Año
+account_group_template_310_311,310,Saldo al Inicio del Año,Saldo al Inicio del Año
+account_group_template_312_312,312,Saldo al Inicio del Año,Saldo al Inicio del Año
+account_group_template_otros_activos,33,OTROS ACTIVOS,OTROS ACTIVOS
+account_group_template_330_331,330,Pérdidas en Investigación,Pérdidas en Investigación
+account_group_template_332_333,332,Faltantes de Bienes en Investigación,Faltantes de Bienes en Investigación
+account_group_template_334_341,334,Cuentas por Cobrar Diversas - Operaciones Corrientes,Cuentas por Cobrar Diversas - Operaciones Corrientes
+account_group_template_342_342,342,Cuentas por Cobrar - Compra de Monedas,Cuentas por Cobrar - Compra de Monedas
+account_group_template_343_345,343,Cuentas por Cobrar del Proceso Inversionista,Cuentas por Cobrar del Proceso Inversionista
+account_group_template_346_346,346,Efectos por Cobrar en Litigio,Efectos por Cobrar en Litigio
+account_group_template_347_347,347,Cuentas por Cobrar en Litigio,Cuentas por Cobrar en Litigio
+account_group_template_348,348,Efectos por Cobrar Protestados,Efectos por Cobrar Protestados
+account_group_template_349_349,349,Cuentas por Cobrar en Proceso Judicial,Cuentas por Cobrar en Proceso Judicial
+account_group_template_354_355,354,Depósitos y Fianzas,Depósitos y Fianzas
+account_group_template_363_363,363,Bonos Redimidos,Bonos Redimidos
+account_group_template_364_364,364,Fondo de Amortización de Bonos - Efectivo y Valores,Fondo de Amortización de Bonos - Efectivo y Valores
+account_group_template_reguladoras_de_activos,36,CUENTAS REGULADORAS DE ACTIVOS,CUENTAS REGULADORAS DE ACTIVOS
+account_group_template_365_365,365,Efectos por Cobrar Descontados,Efectos por Cobrar Descontados
+account_group_template_366_366,366,Desgaste de Base Material de Estudio,Desgaste de Base Material de Estudio
+account_group_template_367_367,367,Desgaste de Vestuario y Lencería,Desgaste de Vestuario y Lencería
+account_group_template_369_369,369,Provisión para Cuentas Incobrables,Provisión para Cuentas Incobrables
+account_group_template_370_372,370,Descuento Comercial e Impuesto,Descuento Comercial e Impuesto
+account_group_template_373_373,373,Desgaste de Útiles y Herramientas,Desgaste de Útiles y Herramientas
+account_group_template_374_374,374,Otras Provisiones Reguladoras de Activos,Otras Provisiones Reguladoras de Activos
+account_group_template_375_388,375,Depreciación de Activos Fijos Tangibles,Depreciación de Activos Fijos Tangibles
+account_group_template_389_389,389,Desgaste de Medios y Equipos para Alquilar,Desgaste de Medios y Equipos para Alquilar
+account_group_template_390_399,390,Amortización de Activos Fijos Intangibles,Amortización de Activos Fijos Intangibles
+account_group_template_pasivos_circulantes,40,PASIVOS CIRCULANTES,PASIVOS CIRCULANTES
+account_group_template_400_400,400,Sobregiro Bancario,Sobregiro Bancario
+account_group_template_401_404,401,Efectos por Pagar a Corto Plazo,Efectos por Pagar a Corto Plazo
+account_group_template_405_415,405,Cuentas por Pagar a Corto Plazo,Cuentas por Pagar a Corto Plazo
+account_group_template_416_416,416,Cobros por Cuenta de Terceros,Cobros por Cuenta de Terceros
+account_group_template_417_417,417,Dividendos y Participaciones por Pagar,Dividendos y Participaciones por Pagar
+account_group_template_418_420,418,Cuentas en Participación,Cuentas en Participación
+account_group_template_421_424,421,Cuentas por Pagar - Activos Fijos Tangibles,Cuentas por Pagar - Activos Fijos Tangibles
+account_group_template_425_429,425,Cuentas por Pagar del Proceso Inversionista,Cuentas por Pagar del Proceso Inversionista
+account_group_template_430_433,430,Cobros Anticipados,Cobros Anticipados
+account_group_template_434_434,434,Materiales Recibidos de Forma Anticipada,Materiales Recibidos de Forma Anticipada
+account_group_template_435_439,435,Depósitos Recibidos,Depósitos Recibidos
+account_group_template_440_449,440,Obligaciones con el Presupuesto del Estado,Obligaciones con el Presupuesto del Estado
+account_group_template_450_453,450,Obligaciones con el Órgano u Organismo,Obligaciones con el Órgano u Organismo
+account_group_template_455_459,455,Nóminas por Pagar,Nóminas por Pagar
+account_group_template_460_469,460,Retenciones por Pagar,Retenciones por Pagar
+account_group_template_470_479,470,Préstamos Recibidos y Otras Operaciones Crediticias por pagar,Préstamos Recibidos y Otras Operaciones Crediticias por pagar
+account_group_template_480_489,480,Gastos Acumulados por Pagar,Gastos Acumulados por Pagar
+account_group_template_492_492,492,Provisión para Vacaciones,Provisión para Vacaciones
+account_group_template_493_499,493,Otras Provisiones Operacionales,Otras Provisiones Operacionales
+account_group_template_500_500,500,Provisión para Pagos de los Subsidios de Seguridad Social a corto plazo,Provisión para Pagos de los Subsidios de Seguridad Social a corto plazo
+account_group_template_501_501,501,Fondo de Compensación para Desbalances Financieros (uso exclusivo de la OSDE),Fondo de Compensación para Desbalances Financieros (uso exclusivo de la OSDE)
+account_group_template_pasivo_largo_plazo,51,PASIVOS A LARGO PLAZO,PASIVOS A LARGO PLAZO
+account_group_template_510_514,510,Efectos por Pagar a Largo Plazo,Efectos por Pagar a Largo Plazo
+account_group_template_515_518,515,Cuentas por Pagar a Largo Plazo,Cuentas por Pagar a Largo Plazo
+account_group_template_520_524,520,Préstamos Recibidos por Pagar a Largo Plazo,Préstamos Recibidos por Pagar a Largo Plazo
+account_group_template_525_532,525,Obligaciones a Largo Plazo,Obligaciones a Largo Plazo
+account_group_template_533_539,533,Otras Provisiones a Largo Plazo,Otras Provisiones a Largo Plazo
+account_group_template_540_540,540,Bonos por Pagar,Bonos por Pagar
+account_group_template_541_541,541,Bonos Suscritos,Bonos Suscritos
+account_group_template_pasivos_diferidos,54,PASIVOS DIFERIDOS,PASIVOS DIFERIDOS
+account_group_template_545_548,545,Ingresos Diferidos,Ingresos Diferidos
+account_group_template_549_549,549,Ingresos Diferidos por Donaciones Recibidas,Ingresos Diferidos por Donaciones Recibidas
+account_group_template_otros_pasivos,55,OTROS PASIVOS,OTROS PASIVOS
+account_group_template_555_564,555,Sobrantes en Investigación,Sobrantes en Investigación
+account_group_template_565_568,565,Cuentas por Pagar Diversas,Cuentas por Pagar Diversas
+account_group_template_569_569,569,Cuentas por Pagar - Compra de Monedas,Cuentas por Pagar - Compra de Monedas
+account_group_template_570_574,570,Ingresos de Períodos Futuros,Ingresos de Períodos Futuros
+account_group_template_575_575,575,Obligación con el Presupuesto del Estado por garantía activada,Obligación con el Presupuesto del Estado por garantía activada
+account_group_template_patrimonio_neto_estatales,60,PATRIMONIO NETO (Entidades Estatales),PATRIMONIO NETO (Entidades Estatales)
+account_group_template_600_612,600,Inversión Estatal,Inversión Estatal
+account_group_template_613_615,613,Revalorización de Activos Fijos Tangibles,Revalorización de Activos Fijos Tangibles
+account_group_template_617_618,617,Recursos Recibidos,Recursos Recibidos
+account_group_template_619_619,619,Recursos Entregados,Recursos Entregados
+account_group_template_620_620,620,Donaciones Recibidas-Nacionales,Donaciones Recibidas-Nacionales
+account_group_template_621_621,621,Donaciones Recibidas-Exterior,Donaciones Recibidas-Exterior
+account_group_template_626_626,626,Donaciones Entregadas-Nacionales,Donaciones Entregadas-Nacionales
+account_group_template_627_627,627,Donaciones Entregadas-Exterior,Donaciones Entregadas-Exterior
+account_group_template_630_634,630,Utilidades Retenidas,Utilidades Retenidas
+account_group_template_635_639,635,Subvención por Pérdida,Subvención por Pérdida
+account_group_template_640_644,640,Pérdida,Pérdida
+account_group_template_645_645,645,Reservas para Contingencias,Reservas para Contingencias
+account_group_template_646_654,646,Otras Reservas Patrimoniales,Otras Reservas Patrimoniales
+account_group_template_688_688,688,Fondo de Contravalor para Proyectos de Inversión,Fondo de Contravalor para Proyectos de Inversión
+account_group_template_690_690,690,Pago a Cuenta de las Utilidades,Pago a Cuenta de las Utilidades
+account_group_template_691_691,691,Pago a Cuenta de los Dividendos,Pago a Cuenta de los Dividendos
+account_group_template_696_696,696,Operaciones entre Dependencias,Operaciones entre Dependencias
+account_group_template_697_697,697,Revaluación de Inventarios,Revaluación de Inventarios
+account_group_template_698_698,698,Ganancia o Pérdida no Realizada,Ganancia o Pérdida no Realizada
+account_group_template_699_699,699,Transitoria del Sistema Automatizado,Transitoria del Sistema Automatizado
+account_group_template_gastos_produccion,70,GASTOS DE PRODUCCIÓN,GASTOS DE PRODUCCIÓN
+account_group_template_700_724,700,Producción en Proceso,Producción en Proceso
+account_group_template_725_725,725,Producción Propia para Insumos,Producción Propia para Insumos
+account_group_template_726_726,726,Reparaciones Capitales con Medios Propios,Reparaciones Capitales con Medios Propios
+account_group_template_727_727,727,Inversiones con Medios Propios Activos Fijos Intangibles,Inversiones con Medios Propios Activos Fijos Intangibles
+account_group_template_728_728,728,Inversiones con Medios Propios,Inversiones con Medios Propios
+account_group_template_731_739,731,Gastos Asociados a la Producción,Gastos Asociados a la Producción
+account_group_template_cuentas_nominales,8,CUENTAS NOMINALES,CUENTAS NOMINALES
+account_group_template_nominales_deudoras_excepto_seguros,80,CUENTAS NOMINALES DEUDORAS (Excepto Empresas de Seguro),CUENTAS NOMINALES DEUDORAS (Excepto Empresas de Seguro)
+account_group_template_800_804,800,Devoluciones y Rebajas en Ventas,Devoluciones y Rebajas en Ventas
+account_group_template_805_809,805,Impuesto por las Ventas,Impuesto por las Ventas
+account_group_template_810_813,810,Costo de Ventas de la Producción,Costo de Ventas de la Producción
+account_group_template_814_817,814,Costo de Ventas de Mercancías,Costo de Ventas de Mercancías
+account_group_template_818_818,818,Costo por Exportación de Servicios,Costo por Exportación de Servicios
+account_group_template_819_821,819,Gastos de Distribución y Ventas,Gastos de Distribución y Ventas
+account_group_template_822_824,822,Gastos Generales y de Administración,Gastos Generales y de Administración
+account_group_template_825_825,825,Gastos de Proyectos,Gastos de Proyectos
+account_group_template_826_833,826,Gastos de Operación,Gastos de Operación
+account_group_template_834_834,834,Gastos de Administración de la OSDE,Gastos de Administración de la OSDE
+account_group_template_835_838,835,Gastos Financieros,Gastos Financieros
+account_group_template_839_839,839,Gastos por Pérdidas en Tasas de Cambio,Gastos por Pérdidas en Tasas de Cambio
+account_group_template_840_840,840,Financiamiento Entregado a la OSDE,Financiamiento Entregado a la OSDE
+account_group_template_841_841,841,Gastos por Estadía - Importadores,Gastos por Estadía - Importadores
+account_group_template_843_843,843,Gastos por Estadía - Otras Entidades,Gastos por Estadía - Otras Entidades
+account_group_template_845_848,845,Gastos por Pérdidas,Gastos por Pérdidas
+account_group_template_849_849,849,Gastos por Pérdidas - Desastres,Gastos por Pérdidas - Desastres
+account_group_template_850_854,850,Gastos por Faltantes de Bienes,Gastos por Faltantes de Bienes
+account_group_template_855_864,855,Otros Impuestos,Otros Impuestos
+account_group_template_865_866,865,Otros Gastos,Otros Gastos
+account_group_template_867_867,867,Gastos de Eventos,Gastos de Eventos
+account_group_template_873_873,873,Gastos de Recuperación de Desastres,Gastos de Recuperación de Desastres
+account_group_template_nominales_acreeddoras_excepto_seguros,90,CUENTAS NOMINALES ACREEDORAS (Excepto Empresas de Seguro),CUENTAS NOMINALES ACREEDORAS (Excepto Empresas de Seguro)
+account_group_template_900_913,900,Ventas,Ventas
+account_group_template_914_914,914,Ventas de Bienes con destino a la Exportación,Ventas de Bienes con destino a la Exportación
+account_group_template_915_915,915,Ventas por Exportación de Servicios,Ventas por Exportación de Servicios
+account_group_template_916_919,916,Subvenciones,Subvenciones
+account_group_template_920_922,920,Ingresos Financieros,Ingresos Financieros
+account_group_template_923_923,923,Financiamiento Recibido de las Empresas (Uso exclusivo de la OSDE),Financiamiento Recibido de las Empresas (Uso exclusivo de la OSDE)
+account_group_template_924_924,924,Ingresos por Variación de Tasas de Cambio,Ingresos por Variación de Tasas de Cambio
+account_group_template_925_925,925,Ingresos por Dividendos Ganados,Ingresos por Dividendos Ganados
+account_group_template_926_927,926,Ingresos por Estadía (navieras y operadores),Ingresos por Estadía (navieras y operadores)
+account_group_template_928_929,928,Ingresos por Recobro de Estadía (importadores y otras entidades),Ingresos por Recobro de Estadía (importadores y otras entidades)
+account_group_template_930_939,930,Ingresos por Sobrantes,Ingresos por Sobrantes
+account_group_template_950_952,950,Otros Ingresos,Otros Ingresos
+account_group_template_953_953,953,Ingresos por Donaciones Recibidas,Ingresos por Donaciones Recibidas
+account_group_template_cuenta_cierre,99,CUENTA DE CIERRE,CUENTA DE CIERRE
+aaccount_group_template_999_999,999,Resultado,Resultado
