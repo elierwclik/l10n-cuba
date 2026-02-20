@@ -1,0 +1,7 @@
+id,name,country_id,tax_payable_account_id,tax_receivable_account_id
+tax_group_ivs,Impuesto sobre Ventas (IVS),base.cu,,
+tax_group_contrib,Contribución Territorial,base.cu,,
+tax_group_retention,Retenciones ONAT,base.cu,,
+tax_group_utilidades,Impuesto sobre Utilidades,base.cu,,
+tax_group_arancel,Aranceles Aduanales,base.cu,,
+tax_group_fuerza_trabajo,Impuesto Fuerza de Trabajo,base.cu,,
