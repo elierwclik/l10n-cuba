@@ -3,7 +3,7 @@
 
 {
      'name': 'Cuba - Nóminas',
-     'version': '19.0',
+     'version': '19.0.1',
      'category': 'Human Resources',
      'summary': """
         Estructuras y reglas salariales, proyecciones de salarios.
