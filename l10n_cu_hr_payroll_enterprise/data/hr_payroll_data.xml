@@ -463,7 +463,7 @@
         <!-- Estructuras salariales MYPIME-->
         <record id="l10n_cu_hr_payroll_enterprise.structure_base" model="hr.payroll.structure">
             <field name="name">BASE</field>
-            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="type_id" ref="hr.structure_type_employee"/>
             <field name="rule_ids" eval="[(6, 0, [
                 ref('hr_payroll_rules_work100'),
             ])]"/>
@@ -472,7 +472,7 @@
         <record id="hr_payroll_salary_structure_operating" model="hr.payroll.structure">
             <field name="name">Operativos determinados</field>
             <field name="code">OPERATIVAS</field>
-            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="type_id" ref="hr.structure_type_employee"/>
             <field name="rule_ids" eval="[(6, 0, [
                 ref('l10n_cu_hr_payroll_enterprise.hr_rule_basic'),
                 ref('hr_payroll_rules_ft'),
@@ -491,7 +491,7 @@
         <record id="hr_payroll_salary_structure_admon" model="hr.payroll.structure">
             <field name="name">Administrativos determinados</field>
             <field name="code">ADMINISTRATIVAS</field>
-            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="type_id" ref="hr.structure_type_employee"/>
             <field name="rule_ids" eval="[(6, 0, [
                 ref('l10n_cu_hr_payroll_enterprise.hr_rule_basic'),
                 ref('hr_payroll_rules_ft'),
@@ -509,7 +509,7 @@
         <record id="hr_payroll_salary_structure_socio" model="hr.payroll.structure">
             <field name="name">Nóminas ejecutivas</field>
             <field name="code">EJECUTIVAS</field>
-            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="type_id" ref="hr.structure_type_employee"/>
             <field name="rule_ids" eval="[(6, 0, [
                 ref('hr_rule_socio_taxable'),
                 ref('hr_payroll_rules_socios_impuesto_dividendos_anticipados'),
@@ -523,7 +523,7 @@
         <record id="hr_payroll_salary_structure_socio_anual" model="hr.payroll.structure">
             <field name="name">Nóminas ejecutivas anual</field>
             <field name="code">EJECUTIVAS ANUAL</field>
-            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="type_id" ref="hr.structure_type_employee"/>
             <field name="rule_ids" eval="[(6, 0, [
                 ref('hr_payroll_rules_socios_pago_cuenta_dividendos'),
                 ref('hr_payroll_rules_socios_trubutos_anticipados'),
