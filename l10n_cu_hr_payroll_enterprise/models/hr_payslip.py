@@ -6,7 +6,7 @@ class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
 #        This field respond to the necessity of see the value of the net rule to pay in the slip
-    total_ps = fields.Float(string='Total')
+    total = fields.Float(string='Total')
 #        This field respond to the necessity of obtain a domain who registry the slip who value is <= 0.0
     total_on_payable = fields.Boolean(string='Not Payable', store=True)
 
@@ -25,7 +25,7 @@ class HrPayslip(models.Model):
         for line in self.line_ids:
             if line.code == salary_rule_09.code:
                 holiday_status_cl = self.env.ref('hr_holidays.holiday_status_cl')
-                res = {'name': "Asignando vacaciones a %s" % line.employee_id.name, 'number_of_days': line.total_ps,
+                res = {'name': "Asignando vacaciones a %s" % line.employee_id.name, 'number_of_days': line.total,
                            'employee_id': line.employee_id.id, 'holiday_status_id': holiday_status_cl.id}
                 allocation = self.env["hr.leave.allocation"].create(res)
                 allocation.action_confirm()
@@ -38,8 +38,8 @@ class HrPayslip(models.Model):
         for slip in self:
             for line in slip.line_ids:
                 if line.salary_rule_id.code == 'NET':
-                    slip.total_ps = line.total_ps
-            if slip.total_ps <= 0.0:
+                    slip.total = line.total
+            if slip.total <= 0.0:
                 slip.total_on_payable = True
             else:
                 slip.total_on_payable = False
@@ -102,14 +102,6 @@ class HrPayslipRun(models.Model):
 
             # if sheet.state == 'draft':
             #     sheet.state = 'calculate'
-
-class HrRuleInput(models.Model):
-    _name = 'hr.rule.input'
-    _description = 'Salary Rule Input'
-
-    name = fields.Char(string='Description', required=True)
-    code = fields.Char(required=True, help="The code that can be used in the salary rules")
-    #input_id = fields.Many2one('hr.salary.rule', string='Salary Rule Input', required=True)
 
 class HrPayrollOtherInput(models.Model):
     _name = 'hr.payroll.other.input'
