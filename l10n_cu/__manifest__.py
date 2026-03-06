@@ -28,7 +28,8 @@
     'data': [
         "data/res_cnae_data.xml",
         "views/res_company_views.xml",
-        "views/expense_element_views.xml",
+        # "views/expense_element_views.xml",
+        #"views/account_views.xml",
         "security/ir.model.access.csv"
     ],
     'license': 'LGPL-3',
