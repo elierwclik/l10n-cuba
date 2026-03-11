@@ -16,22 +16,22 @@ class HrPayslip(models.Model):
         self.write({'state': 'cancel'})
         return res
 
-    def action_payslip_done(self):
-        """No es necesario hacer un cron porque estamos hablando de dias trabajados, que es algo irrelevante
-        desde el punto de visa contable.
-        """
-        res = super(HrPayslip, self).action_payslip_done()
-        salary_rule_09 = self.env.ref('l10n_cu_hr_payroll.hr_payroll_rules_09_dias')
-        for line in self.line_ids:
-            if line.code == salary_rule_09.code:
-                holiday_status_cl = self.env.ref('hr_holidays.holiday_status_cl')
-                res = {'name': "Asignando vacaciones a %s" % line.employee_id.name, 'number_of_days': line.total,
-                           'employee_id': line.employee_id.id, 'holiday_status_id': holiday_status_cl.id}
-                allocation = self.env["hr.leave.allocation"].create(res)
-                allocation.action_confirm()
-                allocation.action_validate()
+    # def action_payslip_done(self):
+    #     """No es necesario hacer un cron porque estamos hablando de dias trabajados, que es algo irrelevante
+    #     desde el punto de visa contable.
+    #     """
+    #     res = super(HrPayslip, self).action_payslip_done()
+    #     salary_rule_09 = self.env.ref('l10n_cu_hr_payroll.hr_payroll_rules_09_dias')
+    #     for line in self.line_ids:
+    #         if line.code == salary_rule_09.code:
+    #             holiday_status_cl = self.env.ref('hr_holidays.holiday_status_cl')
+    #             res = {'name': "Asignando vacaciones a %s" % line.employee_id.name, 'number_of_days': line.total,
+    #                        'employee_id': line.employee_id.id, 'holiday_status_id': holiday_status_cl.id}
+    #             allocation = self.env["hr.leave.allocation"].create(res)
+    #             allocation.action_confirm()
+    #             allocation.action_validate()
 
-        return res
+    #     return res
 
     def compute_sheet(self):
         res = super(HrPayslip, self).compute_sheet()
