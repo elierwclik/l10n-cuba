@@ -7,15 +7,15 @@ class AccountChartTemplate(models.AbstractModel):
     _inherit = 'account.chart.template'
 
     @template('cu_public')
-    def _get_es_pymes_template_data(self):
+    def _get_cu_public_template_data(self):
         return {
             'name': _('Cuba - Plan Contable Empresas Públicas'),
             'parent': 'cu_common',
-            'sequence': 0,
+            'sequence': 20,
         }
 
     @template('cu_public', 'res.company')
-    def _get_es_pymes_res_company(self):
+    def _get_cu_public_res_company(self):
         return {
             self.env.company.id: {
                 'account_fiscal_country_id': 'base.cu',

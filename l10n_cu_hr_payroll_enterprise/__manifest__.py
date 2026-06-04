@@ -12,9 +12,9 @@
      'depends': ["l10n_cu_hr", "hr_payroll"],
      'data': [
           "data/hr_payroll_data.xml",
-          #"data/hr.salary.rule.csv",
+          "data/hr.salary.rule.csv",
           "security/ir.model.access.csv",
-          #"views/hr_payslip_views.xml",
+          "views/hr_payslip_views.xml",
           "views/hr_employee_views.xml",
           "views/hr_projection_views.xml",
           "views/report_projection_template.xml",

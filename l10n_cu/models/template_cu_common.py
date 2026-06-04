@@ -11,6 +11,7 @@ class AccountChartTemplate(models.AbstractModel):
         return {
             'name': _('Cuba - Plan Contable Común'),
             'visible': 0,
+            'code_digits': '10',
             'property_account_receivable_id': 'account_common_1350000',
             'property_account_payable_id': 'account_common_4050000',
             'property_account_expense_categ_id': 'account_common_8140000',
@@ -18,7 +19,7 @@ class AccountChartTemplate(models.AbstractModel):
         }
 
     @template('cu_common', 'res.company')
-    def _get_es_common_res_company(self):
+    def _get_cu_common_res_company(self):
         return {
             self.env.company.id: {
                 'account_fiscal_country_id': 'base.cu',
