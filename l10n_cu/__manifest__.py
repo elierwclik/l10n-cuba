@@ -12,6 +12,7 @@
 {
     'name': 'Cuba - Contabilidad',
     'version': '19.0.1',
+    'countries': ['cu'],
     'author': 'Idola Odoo Team, Comunidad cubana de Odoo ',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
@@ -19,7 +20,7 @@
             * Defines the following chart of account templates:
                 * Cuban general chart of accounts by 494/2016 modified by 407/2019
                 * Cuban general chart of accounts for Actividad Empresarial
-                * Cuban general chart of accounts for Unidades Presupuestadas de Tratamiento Especial 
+                * Cuban general chart of accounts for Unidades Presupuestadas de Tratamiento Especial
                 * Cuban general chart of accounts for Sector Cooperativo Agropecuario y no Agropecuario"
     """,
     'depends': [
@@ -28,8 +29,7 @@
     'data': [
         "data/res_cnae_data.xml",
         "views/res_company_views.xml",
-        # "views/expense_element_views.xml",
-        #"views/account_views.xml",
+        "views/expense_element_views.xml",
         "security/ir.model.access.csv"
     ],
     'license': 'LGPL-3',
