@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
+from odoo import models, fields, _
 from odoo.exceptions import UserError
 
 
@@ -8,7 +8,10 @@ class AddAccountWizard(models.TransientModel):
     _description = 'Agregar Cuenta Manualmente al Cierre'
 
     closing_id = fields.Many2one('l10n_cu.fiscal.year.closing', string='Cierre', required=True)
-    account_id = fields.Many2one('account.account', string='Cuenta', required=True, domain="[('company_id', '=', company_id), ('deprecated', '=', False)]")
+    account_id = fields.Many2one(
+        'account.account', string='Cuenta', required=True,
+        domain="[('company_ids', 'in', [company_id]), ('active', '=', True)]",
+    )
     account_type = fields.Selection([
         ('income', 'Ingreso'),
         ('expense', 'Gasto'),
@@ -19,24 +22,22 @@ class AddAccountWizard(models.TransientModel):
     def action_add_account(self):
         """Agrega la cuenta seleccionada al cierre"""
         self.ensure_one()
-        
-        # Verificar si la cuenta ya existe
+
         existing = self.env['l10n_cu.fiscal.year.closing.account'].search([
             ('closing_id', '=', self.closing_id.id),
             ('account_id', '=', self.account_id.id)
         ], limit=1)
-        
+
         if existing:
             raise UserError(_('La cuenta "%s" ya está agregada al cierre.') % self.account_id.name)
-        
-        # Crear registro
+
         self.env['l10n_cu.fiscal.year.closing.account'].create({
             'closing_id': self.closing_id.id,
             'account_id': self.account_id.id,
             'account_type': self.account_type,
             'include_in_closing': True,
         })
-        
+
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',

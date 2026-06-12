@@ -13,7 +13,7 @@ class AddAccountsWizard(models.TransientModel):
     closing_id = fields.Many2one('l10n_cu.fiscal.year.closing', string='Cierre', required=True)
     account_ids = fields.Many2many(
         'account.account', string='Cuentas',
-        domain="[('company_id', '=', company_id), ('deprecated', '=', False)]"
+        domain="[('company_ids', 'in', [company_id]), ('active', '=', True)]"
     )
     account_type = fields.Selection([
         ('income', 'Ingreso'),

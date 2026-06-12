@@ -92,9 +92,9 @@ class FiscalYearClosing(models.Model):
         
         for pattern in income_patterns:
             accounts = self.env['account.account'].search([
-                ('company_id', '=', self.company_id.id),
+                ('company_ids', 'in', self.company_id.ids),
                 ('code', '=like', pattern),
-                ('deprecated', '=', False)
+                ('active', '=', True)
             ])
             for acc in accounts:
                 if acc.id not in suggested_account_ids:
@@ -136,9 +136,9 @@ class FiscalYearClosing(models.Model):
         
         for pattern in expense_patterns:
             accounts = self.env['account.account'].search([
-                ('company_id', '=', self.company_id.id),
+                ('company_ids', 'in', self.company_id.ids),
                 ('code', '=like', pattern),
-                ('deprecated', '=', False)
+                ('active', '=', True)
             ])
             for acc in accounts:
                 if acc.id not in suggested_account_ids:
@@ -153,11 +153,11 @@ class FiscalYearClosing(models.Model):
         # ========================================================================
         # PATRÓN 3: Fallback por tipo de cuenta (Odoo 15 - user_type_id.type)
         # ========================================================================
-        # Ingresos por tipo de cuenta (Odoo 15)
+        # Ingresos por tipo de cuenta
         accounts_income = self.env['account.account'].search([
-            ('company_id', '=', self.company_id.id),
-            ('user_type_id.type', '=', 'income'),
-            ('deprecated', '=', False),
+            ('company_ids', 'in', self.company_id.ids),
+            ('account_type', 'in', ['income', 'other_income']),
+            ('active', '=', True),
             ('id', 'not in', list(suggested_account_ids))
         ])
         for acc in accounts_income:
@@ -168,12 +168,12 @@ class FiscalYearClosing(models.Model):
                 'include_in_closing': False,
             })
             suggested_account_ids.add(acc.id)
-        
-        # Gastos por tipo de cuenta (Odoo 15)
+
+        # Gastos por tipo de cuenta
         accounts_expense = self.env['account.account'].search([
-            ('company_id', '=', self.company_id.id),
-            ('user_type_id.type', '=', 'expense'),
-            ('deprecated', '=', False),
+            ('company_ids', 'in', self.company_id.ids),
+            ('account_type', 'in', ['expense', 'direct_cost', 'other_expense']),
+            ('active', '=', True),
             ('id', 'not in', list(suggested_account_ids))
         ])
         for acc in accounts_expense:
@@ -332,26 +332,25 @@ class FiscalYearClosing(models.Model):
         # 🔑 Buscar cuenta de resultados
         retained_earnings_account = self.env['account.account'].search([
             ('code', '=', '999000000'),
-            ('company_id', '=', self.company_id.id)
+            ('company_ids', 'in', self.company_id.ids)
         ], limit=1)
 
         if not retained_earnings_account:
             retained_earnings_account = self.env['account.account'].search([
                 ('code', '=like', '999%'),
-                ('company_id', '=', self.company_id.id)
+                ('company_ids', 'in', self.company_id.ids)
             ], limit=1)
 
         if not retained_earnings_account:
             retained_earnings_account = self.env['account.account'].search([
                 ('name', 'ilike', '%resultados%'),
-                ('company_id', '=', self.company_id.id)
+                ('company_ids', 'in', self.company_id.ids)
             ], limit=1)
 
-        # Fallback Odoo 15
         if not retained_earnings_account:
             retained_earnings_account = self.env['account.account'].search([
-                ('user_type_id.type', '=', 'equity'),
-                ('company_id', '=', self.company_id.id)
+                ('account_type', '=', 'equity_unaffected'),
+                ('company_ids', 'in', self.company_id.ids)
             ], limit=1)
 
         if not retained_earnings_account:
