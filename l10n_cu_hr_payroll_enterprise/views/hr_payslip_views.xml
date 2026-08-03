@@ -9,7 +9,7 @@
                 <attribute name="decoration-danger">total_on_payable == True</attribute>
             </list>
             <xpath expr="//field[@name='date_to']" position="after">
-                <field name="total"/>
+                <field name="total_ps"/>
                 <field name="total_on_payable" invisible="1"/>
             </xpath>
         </field>
@@ -30,7 +30,7 @@
         <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='credit_note']" position="before">
-                <field name="total" readonly="1"/>
+                <field name="total_ps" readonly="1"/>
             </xpath>
             <xpath expr="//button[@name='action_payslip_cancel']" position="attributes">
                 <attribute name="invisible">1</attribute>
