@@ -11,6 +11,8 @@
      'auto_install': True,
      'data': [
           'data/hr_holidays_data.xml',
+          "views/hr_leave_type_views.xml",
+          "views/hr_leave_views.xml"
      ],
      'license': 'LGPL-3',
 }

@@ -1,0 +1,60 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cu_hr_holidays
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-01 15:24+0000\n"
+"PO-Revision-Date: 2026-04-01 15:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave__is_settlement_enabled
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave_type__is_settlement_type
+msgid "Allow Settlement"
+msgstr "Permitir Liquidación"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave__display_name
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave_type__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave__settlement_days
+msgid "Días a liquidar"
+msgstr "Días a liquidar"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave__is_settlement
+msgid "Es liquidación"
+msgstr "Es liquidación"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave__id
+#: model:ir.model.fields,field_description:l10n_cu_hr_holidays.field_hr_leave_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model.fields,help:l10n_cu_hr_holidays.field_hr_leave__is_settlement_enabled
+#: model:ir.model.fields,help:l10n_cu_hr_holidays.field_hr_leave_type__is_settlement_type
+msgid "If checked, users can process this leave as a settlement."
+msgstr "Si está marcado, los usuarios pueden procesar esta ausencia como una liquidación."
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model,name:l10n_cu_hr_holidays.model_hr_leave
+msgid "Time Off"
+msgstr "Ausencias"
+
+#. module: l10n_cu_hr_holidays
+#: model:ir.model,name:l10n_cu_hr_holidays.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Tipo de ausencia"
