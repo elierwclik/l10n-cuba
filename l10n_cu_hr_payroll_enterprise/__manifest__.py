@@ -15,7 +15,6 @@
           "data/hr.salary.rule.csv",
           "security/ir.model.access.csv",
           "views/hr_payslip_views.xml",
-          "views/hr_employee_views.xml",
           "views/hr_projection_views.xml",
           "views/report_projection_template.xml",
           "views/report_payslip_run_template.xml",

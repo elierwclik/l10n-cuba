@@ -3,7 +3,7 @@
 
 {
      'name': 'Cuba - HR Ausencias',
-     'version': '19.0',
+     'version': '19.0.1',
      'category': 'Human Resources',
      'description': 'Solicitudes de ausencias de los trabajadores - Cuba.',
      'author': 'Comunidad Cubana de Odoo',

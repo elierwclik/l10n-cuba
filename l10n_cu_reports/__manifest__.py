@@ -3,7 +3,7 @@
 
 {
      'name': 'Cuba - Contabilidad Reportes',
-     'version': '19.0',
+     'version': '19.0.1',
      'category': 'Generic Modules/Reporting',
      'summary': """
         Proformas Estados Financieros (Sector Empresarial) - Cuba.
